@@ -11,7 +11,7 @@ Käytetystä ajasta suurin osa on mennyt suunnitteluun ja tiedonhakuun eri algor
 
 ## **Kohdattuja ongelmia**
 
-Tein melko nopeasti päätöksen labyrintin ratkaisevasta algoritmista, mutta juutuin pitkäksi aikaa pohtimaan, minkä algoritmin tehtävään valitsen.
+Tein melko nopeasti päätöksen labyrintin ratkaisevasta algoritmista, mutta juutuin pitkäksi aikaa pohtimaan, minkä algoritmin tehtävään valitsen. Pidänkin edelleen avoinna mahdollisuuden valita monimutkaisempi toteutustapa.
 
 ## **Seuraavan viikon tavoitteet**
 
