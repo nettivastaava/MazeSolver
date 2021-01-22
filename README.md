@@ -1,4 +1,4 @@
-# **Tehtävägeneraattori**
+# **MazeSolver**
 
 ### Dokumentaatio
 
