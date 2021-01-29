@@ -33,6 +33,11 @@ public class Maze {
     
     public void solve() {
         findDeadends();
+        
+        for (int i=0;i<deadends.size();i++) {
+            System.out.println(deadends.get(i));
+        }
+        
         fillDeadends();
     }
     
@@ -40,7 +45,9 @@ public class Maze {
         while(!deadends.isEmpty()) {
             for(int i=0; i<deadends.size(); i++) {
                 Point current = (Point) deadends.get(i);
+                
                 deadends.remove(i);
+                System.out.println(current);
                 fillOne(current.x, current.y);
                 
             }
@@ -48,19 +55,21 @@ public class Maze {
     }
     
     public void fillOne(int i, int j) {
-        if (i>0 && maze[i-1][j]=='.') {
+        maze[i][j]='@';
+        
+        if (i>1 && maze[i-1][j]=='.' && isDeadend(i-1, j)) {
             deadends.add(new Point(i-1, j));
         } 
-        if (j<maze[0].length-1 && maze[i][j+1]=='.') {
+        if (j<maze[0].length-2 && maze[i][j+1]=='.' && isDeadend(i, j+1)) {
             deadends.add(new Point(i, j+1));
         } 
-        if (i<maze.length-1 && maze[i+1][j]=='.') {
+        if (i<maze.length-2 && maze[i+1][j]=='.' && isDeadend(i+1, j)) {
             deadends.add(new Point(i+1, j));
         } 
-        if (j>0 && maze[i][j-1]=='.') {
+        if (j>1 && maze[i][j-1]=='.' && isDeadend(i, j-1)) {
             deadends.add(new Point(i, j-1));
         } 
-        maze[i][j]='@';
+        
     }
     
     public void findDeadends() {

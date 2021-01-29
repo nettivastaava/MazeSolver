@@ -30,13 +30,13 @@ public class MazeTest {
             
             
             
-            maze = new Maze(9, 6, asciiFile.getAbsolutePath());
+            maze = new Maze(6, 9, asciiFile.getAbsolutePath());
         }
         
         @Test
         public void mazeIsCorrectlyReadFromFile() {           
-            assertEquals(9, maze.getMaze().length);
-            assertEquals(6, maze.getMaze()[0].length);
+            assertEquals(6, maze.getMaze().length);
+            assertEquals(9, maze.getMaze()[0].length);
         }
         
         @Test
@@ -47,7 +47,8 @@ public class MazeTest {
         
         @Test
         public void correctAmountOfDeadends() {
-            maze.findDeadends(); 
+            maze.findDeadends();
+                    
             assertEquals(maze.getDeadends().size(), 2);
         
         }
