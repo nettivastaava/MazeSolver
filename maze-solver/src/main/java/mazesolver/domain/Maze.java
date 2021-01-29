@@ -43,7 +43,7 @@ public class Maze {
     
     public void fillDeadends() {
         while(!deadends.isEmpty()) {
-            for(int i=0; i<deadends.size(); i++) {
+            for(int i = 0; i<deadends.size(); i++) {
                 Point current = (Point) deadends.get(i);
                 
                 deadends.remove(i);
@@ -55,28 +55,28 @@ public class Maze {
     }
     
     public void fillOne(int i, int j) {
-        maze[i][j]='@';
+        maze[i][j] = '@';
         
-        if (i>1 && maze[i-1][j]=='.' && isDeadend(i-1, j)) {
-            deadends.add(new Point(i-1, j));
+        if (i > 1 && maze[i - 1][j] == '.' && isDeadend(i - 1, j)) {
+            deadends.add(new Point(i - 1, j));
         } 
-        if (j<maze[0].length-2 && maze[i][j+1]=='.' && isDeadend(i, j+1)) {
-            deadends.add(new Point(i, j+1));
+        if (j < maze[0].length-2 && maze[i][j + 1] == '.' && isDeadend(i, j + 1)) {
+            deadends.add(new Point(i, j + 1));
         } 
-        if (i<maze.length-2 && maze[i+1][j]=='.' && isDeadend(i+1, j)) {
-            deadends.add(new Point(i+1, j));
+        if (i < maze.length-2 && maze[i + 1][j] == '.' && isDeadend(i + 1, j)) {
+            deadends.add(new Point(i + 1, j));
         } 
-        if (j>1 && maze[i][j-1]=='.' && isDeadend(i, j-1)) {
-            deadends.add(new Point(i, j-1));
+        if (j > 1 && maze[i][j - 1] == '.' && isDeadend(i, j - 1)) {
+            deadends.add(new Point(i, j - 1));
         } 
         
     }
     
     public void findDeadends() {
                
-        for (int i=0; i<maze.length; i++) {
-            for (int j=0; j<maze[i].length; j++) {
-                if (maze[i][j]=='.') {
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze[i].length; j++) {
+                if (maze[i][j] == '.') {
                     if (isDeadend(i, j)) { 
                         deadends.add(new Point(i, j));
                     }
@@ -87,25 +87,25 @@ public class Maze {
     }
     
     public boolean isDeadend(int i, int j) {
-        int neighbors=0;
-        if (i > 0 && maze[i-1][j] == '.') {
+        int neighbors = 0;
+        if (i > 0 && maze[i - 1][j] == '.') {
             neighbors++;
-        } else if (maze[i-1][j] == 'S' || maze[i-1][j] == 'F') {
+        } else if (maze[i - 1][j] == 'S' || maze[i - 1][j] == 'F') {
             return false;
         }
-        if (j < maze[0].length-1 && maze[i][j+1] == '.') {
+        if (j < maze[0].length - 1 && maze[i][j + 1] == '.') {
             neighbors++;
-        } else if (maze[i][j+1] == 'S' || maze[i][j+1] == 'F') {
+        } else if (maze[i][j + 1] == 'S' || maze[i][j + 1] == 'F') {
             return false;
         }
-        if (i < maze.length-1 && maze[i+1][j]=='.') {
+        if (i < maze.length - 1 && maze[i + 1][j] == '.') {
             neighbors++;
-        } else if (maze[i+1][j] == 'S' || maze[i+1][j] == 'F') {
+        } else if (maze[i + 1][j] == 'S' || maze[i + 1][j] == 'F') {
             return false;
         }
-        if (j > 0 && maze[i][j-1] == '.') {
+        if (j > 0 && maze[i][j - 1] == '.') {
             neighbors++;
-        } else if (maze[i][j-1] == 'S' || maze[i][j-1] == 'F') {
+        } else if (maze[i][j - 1] == 'S' || maze[i][j - 1] == 'F') {
             return false;
         }
         if (neighbors == 1) {
@@ -115,8 +115,8 @@ public class Maze {
     }
 
     public void printMaze() {
-        for (int i=0;i<maze.length;i++) {
-            for (int j=0;j<maze[i].length;j++) {
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze[i].length; j++) {
                 System.out.print(maze[i][j]);
             }
             System.out.print("\n");
