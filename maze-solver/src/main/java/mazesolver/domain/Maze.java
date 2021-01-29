@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package mazesolver.domain;
 
 import java.awt.Point;
@@ -11,10 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- *
- * @author vaxandst
- */
+
 public class Maze {
     char[][] maze;
     List deadends;
@@ -24,7 +17,7 @@ public class Maze {
         deadends = new ArrayList<Point>();
         
         try {
-            Scanner input = new Scanner(new File("maze1.txt"));
+            Scanner input = new Scanner(new File(file));
 
             for (int i = 0; i < n; i++) {
                 String s = input.next();
@@ -45,7 +38,7 @@ public class Maze {
     
     public void fillDeadends() {
         while(!deadends.isEmpty()) {
-            for(int i=0;i<deadends.size();i++) {
+            for(int i=0; i<deadends.size(); i++) {
                 Point current = (Point) deadends.get(i);
                 deadends.remove(i);
                 fillOne(current.x, current.y);
@@ -57,11 +50,14 @@ public class Maze {
     public void fillOne(int i, int j) {
         if (i>0 && maze[i-1][j]=='.') {
             deadends.add(new Point(i-1, j));
-        } else if (j<maze[0].length-1 && maze[i][j+1]=='.') {
+        } 
+        if (j<maze[0].length-1 && maze[i][j+1]=='.') {
             deadends.add(new Point(i, j+1));
-        } else if (i<maze.length-1 && maze[i+1][j]=='.') {
+        } 
+        if (i<maze.length-1 && maze[i+1][j]=='.') {
             deadends.add(new Point(i+1, j));
-        } else if (j>0 && maze[i][j-1]=='.') {
+        } 
+        if (j>0 && maze[i][j-1]=='.') {
             deadends.add(new Point(i, j-1));
         } 
         maze[i][j]='@';
@@ -69,41 +65,44 @@ public class Maze {
     
     public void findDeadends() {
                
-        for (int i=0;i<maze.length;i++) {
-            for (int j=0;j<maze[i].length;j++) {
+        for (int i=0; i<maze.length; i++) {
+            for (int j=0; j<maze[i].length; j++) {
                 if (maze[i][j]=='.') {
-                    isDeadend(i, j); 
+                    if (isDeadend(i, j)) { 
+                        deadends.add(new Point(i, j));
+                    }
                 }
             }
         }
         
     }
     
-    public void isDeadend(int i, int j) {
+    public boolean isDeadend(int i, int j) {
         int neighbors=0;
-        if (i>0 && maze[i-1][j]=='.') {
+        if (i > 0 && maze[i-1][j] == '.') {
             neighbors++;
-        } else if (maze[i-1][j]=='S' || maze[i-1][j]=='F') {
-            return;
+        } else if (maze[i-1][j] == 'S' || maze[i-1][j] == 'F') {
+            return false;
         }
-        if (j<maze[0].length-1 && maze[i][j+1]=='.') {
+        if (j < maze[0].length-1 && maze[i][j+1] == '.') {
             neighbors++;
-        } else if (maze[i][j+1]=='S' || maze[i][j+1]=='F') {
-            return;
+        } else if (maze[i][j+1] == 'S' || maze[i][j+1] == 'F') {
+            return false;
         }
-        if (i<maze.length-1 && maze[i+1][j]=='.') {
+        if (i < maze.length-1 && maze[i+1][j]=='.') {
             neighbors++;
-        } else if (maze[i+1][j]=='S' || maze[i+1][j]=='F') {
-            return;
+        } else if (maze[i+1][j] == 'S' || maze[i+1][j] == 'F') {
+            return false;
         }
-        if (j>0 && maze[i][j-1]=='.') {
+        if (j > 0 && maze[i][j-1] == '.') {
             neighbors++;
-        } else if (maze[i][j-1]=='S' || maze[i][j-1]=='F') {
-            return;
+        } else if (maze[i][j-1] == 'S' || maze[i][j-1] == 'F') {
+            return false;
         }
-        if (neighbors==1) {
-            deadends.add(new Point(i, j));
+        if (neighbors == 1) {
+            return true;
         }
+        return false;
     }
 
     public void printMaze() {
@@ -115,4 +114,14 @@ public class Maze {
         }
         System.out.println("");
     }
+
+    public char[][] getMaze() {
+        return maze;
+    }
+
+    public List getDeadends() {
+        return deadends;
+    }
+    
+    
 }
