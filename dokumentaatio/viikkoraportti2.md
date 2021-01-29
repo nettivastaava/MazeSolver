@@ -4,6 +4,8 @@
 
 - Aiheen mietintää uudelleen
 - Koodaamisen aloitus
+- Ensimmäiset testit
+- Checkstylen ja Jacocon käyttöönotto
 - Muokkaukset dokumentaatioon
 
 Kuten epäilinkin, aiheeni oli liian suppea. Päätin kuitekin pitäytyä ideassani labyrintin ratkomisesta, joten nykyinen ideani on vertailla eri algoritmeja ASCII-labyrintissä. Ensimmäisenä aloitin toteuttamaan DeadendFiller-algoritmia. Tätä algortimia on määrä vertailla IDA*-algortimiin, jonka toteutan myöhemmässä vaiheessa.
