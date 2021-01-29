@@ -7,4 +7,5 @@
 | 22.01.2021 | 2 | Dokumentointi ja viikkoraportti |
 | 27.01.2021 | 3 | Aiheen uudelleenmäärittely |
 | 27.01.2021 | 1 | Labyrintin luokka ja DeadendFiller-algoritmin aloittaminen |
-| Yht. | 11 | |
+| 29.01.2021 | 3 | Toiminnallisuuksien manuaalinen testaus sekä ensimmäisten JUnit-testien toteutus |
+| Yht. | 14 | |

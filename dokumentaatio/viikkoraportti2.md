@@ -14,4 +14,4 @@ Koodaamisen aloittaminen osoittautui todella hankalaksi ja jouduinkin aloittamaa
 
 ## **Seuraavan viikon tavoitteet**
 
-Ensi viikolla tavoitteena on, että nyt aloitettu algoritmi olisi valmis ja IDA* vähintäänkin hyvässä vaiheessa.
+Ensi viikolla tavoitteena on, että nyt aloitettu algoritmi olisi valmis ja IDA* vähintäänkin hyvässä vaiheessa. Toistaiseksi myös itse algoritmi on toteutettu labyrintin kanssa samassa luokassa. Tarkoitus onkin myös refaktoroida sovellusta järkevämpään muotoon pilkkomalla toiminnallisuutta useampiin luokkiin.
