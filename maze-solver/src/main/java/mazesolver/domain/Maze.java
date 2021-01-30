@@ -88,26 +88,18 @@ public class Maze {
     
     public boolean isDeadend(int i, int j) {
         int neighbors = 0;
-        if (i > 0 && maze[i - 1][j] == '.') {
+        if (i > 0 && maze[i - 1][j] != '@') {
             neighbors++;
-        } else if (maze[i - 1][j] == 'S' || maze[i - 1][j] == 'F') {
-            return false;
-        }
-        if (j < maze[0].length - 1 && maze[i][j + 1] == '.') {
+        } 
+        if (j < maze[0].length - 1 && maze[i][j + 1] != '@') {
             neighbors++;
-        } else if (maze[i][j + 1] == 'S' || maze[i][j + 1] == 'F') {
-            return false;
-        }
-        if (i < maze.length - 1 && maze[i + 1][j] == '.') {
+        } 
+        if (i < maze.length - 1 && maze[i + 1][j] != '@') {
             neighbors++;
-        } else if (maze[i + 1][j] == 'S' || maze[i + 1][j] == 'F') {
-            return false;
-        }
-        if (j > 0 && maze[i][j - 1] == '.') {
+        } 
+        if (j > 0 && maze[i][j - 1] != '@') {
             neighbors++;
-        } else if (maze[i][j - 1] == 'S' || maze[i][j - 1] == 'F') {
-            return false;
-        }
+        } 
         if (neighbors == 1) {
             return true;
         }
