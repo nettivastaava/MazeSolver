@@ -7,7 +7,9 @@ Projektini tulee toteuttamaan ja vertailemaan useampaa polunetsintäalgoritmia, 
 
 ## **Algoritmi ja aikavaativuus**
 
-Lyhyimmän reitin etsimisessä tullaan leveyshaun lisäksi käyttämään DeadendFiller ja Wallfollower-algoritmeja. On myös huomionarvoista, että DeadendFiller käyttää lopullisen reitin löytämiseen leveyshakua, jotta se toimisi myös syklejä sisältävissä labyrinteissä.
+Lyhyimmän reitin etsimisessä tullaan leveyshaun lisäksi käyttämään DeadendFiller ja Wallfollower-algoritmeja. On myös huomionarvoista, että DeadendFiller käyttää lopullisen reitin löytämiseen leveyshakua, jotta se toimisi myös syklejä sisältävissä labyrinteissä.labyrintin solmujen ja m solmuja yhdistävien kaarien määrä. Tämä on perusteltavissa sillä, että kukin solmu ja kaari käsitellään algoritmissa vain kerran.
+
+Leveyshaku ja DeadendFollower ovat molemmat aikavaativuudeltaan O(n + m), missä n on 
 
 ## **Käytettävät tietorakenteet**
 
