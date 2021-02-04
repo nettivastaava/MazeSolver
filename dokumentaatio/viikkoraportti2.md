@@ -8,7 +8,7 @@
 - Checkstylen ja Jacocon käyttöönotto
 - Muokkaukset dokumentaatioon
 
-Kuten epäilinkin, aiheeni oli liian suppea. Päätin kuitenkin pitäytyä ideassani labyrintin ratkomisesta, joten nykyinen ideani on vertailla eri algoritmeja ASCII-labyrintissä. Ensimmäisenä aloitin toteuttamaan DeadendFiller-algoritmia. Tätä algortimia on määrä vertailla IDA*-algortimiin sekä mahdollisesti tavalliseen leveyshakuun, jotka toteutan myöhemmässä vaiheessa.
+Kuten epäilinkin, aiheeni oli liian suppea. Päätin kuitenkin pitäytyä ideassani labyrintin ratkomisesta, joten nykyinen ideani on vertailla eri algoritmeja ASCII-labyrintissä. Ensimmäisenä aloitin toteuttamaan DeadendFiller-algoritmia. Tätä algortimia on määrä vertailla Wallfollower-algortimiin sekä tavalliseen leveyshakuun, jotka toteutan myöhemmässä vaiheessa.
 
 ## **Kohdattuja ongelmia**
 
@@ -16,4 +16,4 @@ Koodaamisen aloittaminen osoittautui todella hankalaksi ja jouduinkin aloittamaa
 
 ## **Seuraavan viikon tavoitteet**
 
-Ensi viikolla tavoitteena on, että nyt aloitettu algoritmi olisi valmis ja IDA* vähintäänkin hyvässä vaiheessa. Toistaiseksi myös itse algoritmi on toteutettu labyrintin kanssa samassa luokassa. Tarkoitus onkin myös refaktoroida sovellusta järkevämpään muotoon pilkkomalla toiminnallisuutta useampiin luokkiin.
+Ensi viikolla tavoitteena on, että nyt aloitettu algoritmi olisi valmis ja Wallfollower vähintäänkin hyvässä vaiheessa. Toistaiseksi myös itse algoritmi on toteutettu labyrintin kanssa samassa luokassa. Tarkoitus onkin myös refaktoroida sovellusta järkevämpään muotoon pilkkomalla toiminnallisuutta useampiin luokkiin.

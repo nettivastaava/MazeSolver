@@ -7,7 +7,7 @@ Projektini tulee toteuttamaan ja vertailemaan useampaa polunetsintäalgoritmia, 
 
 ## **Algoritmi ja aikavaativuus**
 
-Lyhyimmän reitin etsimisessä tullaan käyttämään DeadendFiller-algoritmia sekä IDA*-algoritmia.
+Lyhyimmän reitin etsimisessä tullaan leveyshaun lisäksi käyttämään DeadendFiller ja Wallfollower-algoritmeja. On myös huomionarvoista, että DeadendFiller käyttää lopullisen reitin löytämiseen leveyshakua, jotta se toimisi myös syklejä sisältävissä labyrinteissä.
 
 ## **Käytettävät tietorakenteet**
 
