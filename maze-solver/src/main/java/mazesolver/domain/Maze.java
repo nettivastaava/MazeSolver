@@ -3,6 +3,7 @@ package mazesolver.domain;
 
 import java.awt.Point;
 import java.io.File;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -33,12 +34,8 @@ public class Maze {
     
     public void solve() {
         findDeadends();
-        
-        for (int i=0;i<deadends.size();i++) {
-            System.out.println(deadends.get(i));
-        }
-        
         fillDeadends();
+        
     }
     
     public void fillDeadends() {
@@ -47,7 +44,6 @@ public class Maze {
                 Point current = (Point) deadends.get(i);
                 
                 deadends.remove(i);
-                System.out.println(current);
                 fillOne(current.x, current.y);
                 
             }
@@ -123,6 +119,8 @@ public class Maze {
     public List getDeadends() {
         return deadends;
     }
+    
+        
     
     
 }
