@@ -41,12 +41,6 @@ public class BFSTest {
             assertEquals("AAAOO", bfs.bfs(maze.getMaze()));
         }
         
-        @Test
-        public void returnsNullWhenNoPathFound() {
-            maze.getMaze()[1][2]='.';
-            assertEquals(bfs.bfs(maze.getMaze()), null);
-        }
-        
         @After
         public void tearDown() {
             asciiFile.delete();
