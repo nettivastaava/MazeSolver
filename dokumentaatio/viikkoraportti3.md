@@ -13,6 +13,6 @@ Enää aiheeseeni ei tullut merkittäviä muutoksia. Jouduin kuitenkin pohtimaan
 
 Varsinaisia ongelmia ei yllä mainittua pohdintaa lukuunottamatta tällä viikolla ilmennyt. Koodaus eteni melko suoraviivaisesti ilman pidempiä jumituksia.
 
-## **Seuraavan viikon tavoitteet**kiin.
+## **Seuraavan viikon tavoitteet**
 
 Vaikka projektini eteni mielestäni ihan kohtuullisesti, on huomioitava, että poikkesin viime viikolla asettamistani tavoitteista. Toteutin leveyshaun Wallfollowerin sijaan. Ensi viikolla tavoitteena onkin saada Wallfollower aluilleen, jotta projektin "runko" olisi valmis. Sen jälkeen tehtävänä olisi vielä tietorakenteita sekä algoritmien vertailua erilaisissa labyrinteissä.
