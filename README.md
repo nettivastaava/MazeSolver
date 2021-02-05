@@ -10,3 +10,4 @@
 
 - [Viikko 1](https://github.com/nettivastaava/MazeSolver/blob/master/dokumentaatio/viikkoraportti1.md)
 - [Viikko 2](https://github.com/nettivastaava/MazeSolver/blob/master/dokumentaatio/viikkoraportti2.md)
+- [Viikko 3](https://github.com/nettivastaava/MazeSolver/blob/master/dokumentaatio/viikkoraportti3.md)

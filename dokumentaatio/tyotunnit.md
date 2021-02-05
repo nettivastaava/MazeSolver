@@ -9,4 +9,7 @@
 | 27.01.2021 | 1 | Labyrintin luokka ja DeadendFiller-algoritmin aloittaminen |
 | 29.01.2021 | 3 | Toiminnallisuuksien manuaalinen testaus sekä ensimmäisten JUnit-testien toteutus |
 | 29.01.2021 | 3 | Bugien korjausta ja umpikujan täytöstä vastaava metodi |
-| Yht. | 17 | |
+| 04.02.2021 | 3 | BFS:n toteutus |
+| 04.02.2021 | 1 | BFS:n testausta |
+| 05.02.2021 | 2 | DeadendFillerin viimeistely ja yleisiä parannuksia |
+| Yht. | 23 | |
