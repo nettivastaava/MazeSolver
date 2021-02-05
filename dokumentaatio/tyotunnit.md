@@ -11,4 +11,5 @@
 | 29.01.2021 | 3 | Bugien korjausta ja umpikujan täytöstä vastaava metodi |
 | 04.02.2021 | 3 | BFS:n toteutus |
 | 04.02.2021 | 1 | BFS:n testausta |
-| Yht. | 21 | |
+| 05.02.2021 | 2 | DeadendFillerin viimeistely ja yleisiä parannuksia |
+| Yht. | 23 | |
