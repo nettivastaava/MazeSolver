@@ -13,18 +13,20 @@ Leveyshaku ja DeadendFollower ovat molemmat aikavaativuudeltaan O(n + m), missä
 
 ## **Käytettävät tietorakenteet**
 
-Itse labyrintti kuvataan kaksiulotteiselle taulukolla, jossa jokaisen indeksin [i][j] sisältämä ASCII-merkki on joko sallittu tai kielletty tilasiirtymä. Niin ikään toisella kaksiulotteiselle taulukolla pidetään kirjaa siitä, missä ruuduissa ollaan jo vierailtu. DeadendFiller-algoritmi tarvitsee lisäksi listarakenteen, jolla ylläpidetään luetteloa labyrintin umpikujista. Listalle tullaan lisäämään Javan luokkaa Point mukailevia olioita, joista saa helposti selville sijainnin labyrintissä.
+Itse labyrintti kuvataan kaksiulotteisella taulukolla, jossa jokaisen indeksin [i][j] sisältämä ASCII-merkki on joko sallittu tai kielletty tilasiirtymä. Niin ikään toisella kaksiulotteisella taulukolla pidetään kirjaa siitä, missä ruuduissa ollaan jo vierailtu. DeadendFiller-algoritmi tarvitsee lisäksi listarakenteen, jolla ylläpidetään luetteloa labyrintin umpikujista. Listalle tullaan lisäämään Javan luokkaa Point mukailevia olioita, joista saa helposti selville sijainnin labyrintissä.
 
 ## **Syötteet ja tulosteet**
 
 ### **Syötteet**
 
 - Tiedoston nimi, joka sisältää ASCII-merkeistä muodostetun labyrintin
-- Lähtö- ja maaliruutujen koordinaatit
+- Tiedostossa kuvatun labyrintin korkeus ja leveys kokonaislukuina
 
 ### **Tulosteet**
 
-- Lista tilasiirtymistä, jotka vaadittiin maaliruutuun pääsemiseksi. Esimerkiksi "Vasen, vasen, ylös, ylös, oikea". Lisäksi tulosteessa ilmoitetaan tarvittavien siirtymien määrä.
+- Lista tilasiirtymistä, jotka vaadittiin maaliruutuun pääsemiseksi. Esimerkiksi "Vasen, vasen, ylös, ylös, oikea". Lisäksi tulosteessa ilmoitetaan tarvittavien      siirtymien määrä.
+- Labyrintin kuvaus ASCII-merkkeinä.
+- DeadendFiller tulostaa lisäksi kuvauksen labyrintistä, jonka umpikujat on täytetty
 
 #### **Lähteet**
 
