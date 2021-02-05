@@ -4,6 +4,7 @@
 
 - Alustava leveyshakualgoritmi
 - Viimeistely DeadendFilleriin
+- Wallfollowerin aloittaminen
 - Testien laajennuksia
 - Tile-luokka
 
@@ -15,4 +16,4 @@ Varsinaisia ongelmia ei yllä mainittua pohdintaa lukuunottamatta tällä viikol
 
 ## **Seuraavan viikon tavoitteet**
 
-Vaikka projektini eteni mielestäni ihan kohtuullisesti, on huomioitava, että poikkesin viime viikolla asettamistani tavoitteista. Toteutin leveyshaun Wallfollowerin sijaan. Ensi viikolla tavoitteena onkin saada Wallfollower aluilleen, jotta projektin "runko" olisi valmis. Sen jälkeen tehtävänä olisi vielä tietorakenteita sekä algoritmien vertailua erilaisissa labyrinteissä.
+Vaikka projektini eteni mielestäni ihan kohtuullisesti, on huomioitava, että poikkesin viime viikolla asettamistani tavoitteista. Toteutin leveyshaun Wallfollowerin sijaan. Ensi viikolla tavoitteena onkin saada Wallfollower valmiiksi, jotta projektin "runko" olisi paketissa. Sen jälkeen toteutettavana olisi vielä algoritmien tarvitsemat tietorakenteet sekä lopuksi algoritmien vertailua erilaisissa labyrinteissä.
