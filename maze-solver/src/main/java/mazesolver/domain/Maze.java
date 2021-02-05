@@ -12,10 +12,14 @@ import java.util.Scanner;
 public class Maze {
     char[][] maze;
     List deadends;
+    int pathY;
+    int pathX;
+    StringBuilder route;
     
     public Maze(int n, int m, String file) {
         maze = new char[n][m];
         deadends = new ArrayList<Point>();
+        route=new StringBuilder();
         
         try {
             Scanner input = new Scanner(new File(file));
@@ -25,6 +29,10 @@ public class Maze {
 
                 for (int j = 0; j < m; j++) {
                     maze[i][j] = s.charAt(j);
+                    if (maze[i][j]=='S') {
+                        pathY=i;
+                        pathX=j;
+                    }
                 }
             }
 
@@ -32,17 +40,43 @@ public class Maze {
         
     }
     
-    public void solve() {
+    public String solve() {
         findDeadends();
         fillDeadends();
+        printMaze();
+        findPath(pathY, pathX);
+        return "DEF: " + route.toString();
+        
+    }
+    
+    public void findPath(int y, int x) {
+        if (maze[y][x]=='F') {
+            return;
+        } 
+        maze[y][x]='@';
+        
+        if (y > 0 && maze[y - 1][x] != '@') {          
+            route.append("Y");
+            findPath(y - 1, x);
+        } else if (x < maze[0].length - 1 && maze[y][x + 1] != '@') {
+            route.append("O");
+            findPath(y, x + 1);
+        } else if (y < maze.length - 1 && maze[y + 1][x] != '@') {
+            route.append("A");
+            findPath(y + 1, x);
+        } else if (x > 0 && maze[y][x - 1] != '@') {
+            route.append("V");
+            findPath(y, x - 1);
+        }
+
+      
         
     }
     
     public void fillDeadends() {
         while(!deadends.isEmpty()) {
-            for(int i = 0; i<deadends.size(); i++) {
-                Point current = (Point) deadends.get(i);
-                
+            for(int i = 0; i < deadends.size(); i++) {
+                Point current = (Point) deadends.get(i);        
                 deadends.remove(i);
                 fillOne(current.x, current.y);
                 

@@ -52,6 +52,17 @@ public class MazeTest {
             assertEquals(maze.getDeadends().size(), 2);
         
         }
+        
+        @Test
+        public void noDeadendsAfterFilling() {
+            maze.fillDeadends();
+            assertEquals(0, maze.getDeadends().size());
+        }
+        
+        @Test
+        public void correctPathIsFound() {
+            assertEquals("DEF: AAAOO", maze.solve());            
+        }
 
         
         @After

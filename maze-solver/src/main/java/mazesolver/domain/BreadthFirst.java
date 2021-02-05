@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mazesolver.domain;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 
-/**
- *
- * @author vaxandst
- */
 public class BreadthFirst {
     char[][] maze;
     String route;
@@ -27,11 +18,8 @@ public class BreadthFirst {
     
     public String bfs(char[][] maze) {
         this.maze = maze;
-
         this.route=null;
-
         this.visited = new boolean[maze.length][maze[0].length];
-
         this.routes = new String [maze.length][maze[0].length];
 
         int n = 9998;
@@ -42,8 +30,8 @@ public class BreadthFirst {
             net[i] = new ArrayList<>();
         }
 
-        yj=new ArrayDeque<Integer>();
-        xj=new ArrayDeque<Integer>();
+        yj = new ArrayDeque<Integer>();
+        xj = new ArrayDeque<Integer>();
 
         
         int iX =- 1;
@@ -54,9 +42,7 @@ public class BreadthFirst {
                 String s = Character.toString(maze[i][j]);
           
                 if (s.equals("S")) {
-
                     iY = i;
-
                     iX = j;
                 }
             }
@@ -139,20 +125,19 @@ public class BreadthFirst {
         }
 
     }
+  
 
-        
+    public boolean isUncharted(int y, int x) {
 
-        public boolean isUncharted(int y, int x) {
+        String s = Character.toString(maze[y][x]);
 
-            String s = Character.toString(maze[y][x]);
-
-            if (s.equals("@") || visited[y][x] == true) {
+        if (s.equals("@") || visited[y][x] == true) {
 
             return false;
 
-            } else 
-                visited[y][x] = true;
-                return true;
+        } else 
+            visited[y][x] = true;
+            return true;
 
     }
 }
