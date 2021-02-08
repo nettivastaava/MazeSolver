@@ -6,7 +6,9 @@ import mazesolver.domain.Wallfollower;
 
 public class Main {
     public static void main(String[] args) {
-        Maze m = new Maze(6, 9, "maze1.txt");
+  
+        
+        Maze m = new Maze(7, 7, "maze3.txt");
         
         BreadthFirst bfs1 = new BreadthFirst();
         Wallfollower wf1 = new Wallfollower();
@@ -16,7 +18,7 @@ public class Main {
         System.out.println("");
         
         m.printMaze();
-        m.solve();
+        System.out.println(m.solve());
         System.out.println("");
         
         

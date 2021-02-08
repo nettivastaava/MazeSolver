@@ -82,9 +82,9 @@ public class BreadthFirst {
 
             }
 
-            for(int i = 0; i <= 3; i++) {
+            
 
-                if (i == 0) {
+       
                     if (y < maze.length-1 && isUncharted(y + 1, x)) {
                         yj.addLast(y + 1);
                         xj.addLast(x);  
@@ -93,7 +93,7 @@ public class BreadthFirst {
 
                     }
 
-                } else if (i == 1) {
+              
 
                     if (y > 0 && isUncharted(y - 1, x)) {
                         yj.addLast(y - 1);
@@ -101,14 +101,14 @@ public class BreadthFirst {
 
                         routes[y - 1][x] = routes[y][x] + "Y";
                     }               
-                } else if (i == 2) {
+               
                     if (0 < x && isUncharted(y, x - 1)) {
                         yj.addLast(y);
                         xj.addLast(x - 1);
 
                         routes[y][x - 1] = routes[y][x] + "V";
                     }
-                } else if (i == 3) {
+                
                     if (x < maze[0].length - 1 && isUncharted(y, x + 1)) {
 
                         yj.addLast(y);
@@ -118,9 +118,9 @@ public class BreadthFirst {
                         this.routes[y][x + 1]=routes[y][x] + "O";
 
                     }
-                }
+                
 
-            }
+            
 
         }
 
