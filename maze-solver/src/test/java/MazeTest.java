@@ -49,14 +49,14 @@ public class MazeTest {
         public void correctAmountOfDeadends() {
             maze.findDeadends();
                     
-            assertEquals(maze.getDeadends().size(), 2);
+            assertEquals(maze.getDeadends().getSize(), 2);
         
         }
         
         @Test
         public void noDeadendsAfterFilling() {
             maze.fillDeadends();
-            assertEquals(0, maze.getDeadends().size());
+            assertEquals(0, maze.getDeadends().getSize());
         }
         
         @Test

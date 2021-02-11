@@ -3,11 +3,11 @@ package mazesolver.domain;
 
 
 
-public class ListStructure<T> {
+public class StackStructure<T> {
     private T[] values;
     private int size;
     
-    public ListStructure() {
+    public StackStructure() {
         this.values = (T[]) new Object[10];
         this.size = 0;
     }
@@ -60,7 +60,7 @@ public class ListStructure<T> {
         return size;
     }
     
-    public boolean isEmpty() {
+    public boolean isNotEmpty() {
         return this.size > 0;
     }
     
