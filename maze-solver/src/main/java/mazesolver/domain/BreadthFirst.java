@@ -75,55 +75,34 @@ public class BreadthFirst {
             String s = Character.toString(maze[y][x]);
 
             if (s.equals("F")) {           
-
                 this.route = routes[y][x];
-
                 return;          
-
             }
 
-            
+            if (y < maze.length-1 && isUncharted(y + 1, x)) {
+                yj.addLast(y + 1);
+                xj.addLast(x);  
+                routes[y + 1][x] = routes[y][x] + "A";
+            }
 
-       
-                    if (y < maze.length-1 && isUncharted(y + 1, x)) {
-                        yj.addLast(y + 1);
-                        xj.addLast(x);  
-
-                        routes[y + 1][x] = routes[y][x] + "A";
-
-                    }
-
-              
-
-                    if (y > 0 && isUncharted(y - 1, x)) {
-                        yj.addLast(y - 1);
-                        xj.addLast(x);
-
-                        routes[y - 1][x] = routes[y][x] + "Y";
-                    }               
+            if (y > 0 && isUncharted(y - 1, x)) {
+                yj.addLast(y - 1);
+                xj.addLast(x);
+                routes[y - 1][x] = routes[y][x] + "Y";
+            }               
                
-                    if (0 < x && isUncharted(y, x - 1)) {
-                        yj.addLast(y);
-                        xj.addLast(x - 1);
-
-                        routes[y][x - 1] = routes[y][x] + "V";
-                    }
+            if (0 < x && isUncharted(y, x - 1)) {
+                yj.addLast(y);
+                xj.addLast(x - 1);
+                routes[y][x - 1] = routes[y][x] + "V";
+            }
                 
-                    if (x < maze[0].length - 1 && isUncharted(y, x + 1)) {
-
-                        yj.addLast(y);
-
-                        xj.addLast(x + 1);
-
-                        this.routes[y][x + 1]=routes[y][x] + "O";
-
-                    }
-                
-
-            
-
+            if (x < maze[0].length - 1 && isUncharted(y, x + 1)) {
+                yj.addLast(y);
+                xj.addLast(x + 1);
+                this.routes[y][x + 1]=routes[y][x] + "O";
+            }            
         }
-
     }
   
 

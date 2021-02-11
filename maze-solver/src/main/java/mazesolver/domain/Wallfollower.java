@@ -7,10 +7,8 @@ public class Wallfollower {
     int iY;
     int iX;
     String route;
-    private String[][] routes;
+    String[][] routes;
 
-
-    
     public Wallfollower() {
     }
     
@@ -18,6 +16,8 @@ public class Wallfollower {
         this.maze = laby;
         this.visited = new boolean[laby.length][laby[0].length];
         this.routes = new String[laby.length][laby[0].length];
+        this.iY = -1;
+        this.iX = -1;
         
         for (int i = 1; i < maze.length; i++) {
             for (int j = 1 ;j < maze[0].length; j++) {
@@ -34,8 +34,7 @@ public class Wallfollower {
             return null;
         }
         
-        depthFirst(iY, iX);
-        
+        depthFirst(iY, iX);       
         return route;
     }
     
@@ -46,31 +45,39 @@ public class Wallfollower {
             route=routes[y][x];
             return;
         }
-        
-        
+                
+        if (y < maze.length-1 && isUncharted(y + 1, x)) {
+            routes[y + 1][x] = routes[y][x] + "A";
+            depthFirst(y + 1, x);
+        }
 
+        if (y > 0 && isUncharted(y - 1, x)) {
+            routes[y - 1][x] = routes[y][x] + "Y";
+            depthFirst(y - 1, x);
+        }               
                 
-            if (y < maze.length-1 && maze[y + 1][x] != '@' && !visited[y + 1][x]) {
-                routes[y + 1][x] = routes[y][x] + "A";
-                depthFirst(y + 1, x);
-            }
+        if (0 < x && isUncharted(y, x - 1)) {
+            routes[y][x - 1]=routes[y][x] + "V";
+            depthFirst(y, x - 1); 
+        }
+                
+        if (x < maze[0].length - 1 && isUncharted(y, x + 1)) {
+            routes[y][x + 1] = routes[y][x] + "O";
+            depthFirst(y, x + 1);
+        }    
+    }
+    
+    public boolean isUncharted(int y, int x) {
 
-            if (y > 0 && maze[y - 1][x]!= '@' && !visited[y - 1][x]) {
-                routes[y - 1][x] = routes[y][x] + "Y";
-                depthFirst(y - 1, x);
-            }               
-                
-            if (0 < x && maze[y][x - 1] != '@' && !visited[y][x -1]) {
-                routes[y][x - 1]=routes[y][x] + "V";
-                depthFirst(y, x - 1); 
-            }
-                
-            if (x < maze[0].length - 1 && maze[y][x + 1] != '@' && !visited[y][x + 1]) {
-                routes[y][x + 1] = routes[y][x] + "O";
-                depthFirst(y, x + 1);
-            }
-                
+        String s = Character.toString(maze[y][x]);
 
-            
+        if (s.equals("@") || visited[y][x] == true) {
+
+            return false;
+
+        } else 
+            visited[y][x] = true;
+            return true;
+
     }
 }
