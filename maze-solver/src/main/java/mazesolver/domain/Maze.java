@@ -3,7 +3,7 @@ package mazesolver.domain;
 
 import java.awt.Point;
 import java.io.File;
-import java.util.ArrayDeque;
+import mazesolver.domain.Tile;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -18,7 +18,7 @@ public class Maze {
     
     public Maze(int n, int m, String file) {
         maze = new char[n][m];
-        deadends = new ArrayList<Point>();
+        deadends = new ArrayList<Tile>();
         route=new StringBuilder();
         
         try {
@@ -76,9 +76,9 @@ public class Maze {
     public void fillDeadends() {
         while(!deadends.isEmpty()) {
             for(int i = 0; i < deadends.size(); i++) {
-                Point current = (Point) deadends.get(i);        
+                Tile current = (Tile) deadends.get(i);   
                 deadends.remove(i);
-                fillOne(current.x, current.y);
+                fillOne(current.y, current.x);
                 
             }
         }
@@ -88,16 +88,16 @@ public class Maze {
         maze[i][j] = '@';
         
         if (i > 1 && maze[i - 1][j] == '.' && isDeadend(i - 1, j)) {
-            deadends.add(new Point(i - 1, j));
+            deadends.add(new Tile(i - 1, j));
         } 
         if (j < maze[0].length-2 && maze[i][j + 1] == '.' && isDeadend(i, j + 1)) {
-            deadends.add(new Point(i, j + 1));
+            deadends.add(new Tile(i, j + 1));
         } 
         if (i < maze.length-2 && maze[i + 1][j] == '.' && isDeadend(i + 1, j)) {
-            deadends.add(new Point(i + 1, j));
+            deadends.add(new Tile(i + 1, j));
         } 
         if (j > 1 && maze[i][j - 1] == '.' && isDeadend(i, j - 1)) {
-            deadends.add(new Point(i, j - 1));
+            deadends.add(new Tile(i, j - 1));
         } 
         
     }
@@ -108,7 +108,7 @@ public class Maze {
             for (int j = 0; j < maze[i].length; j++) {
                 if (maze[i][j] == '.') {
                     if (isDeadend(i, j)) { 
-                        deadends.add(new Point(i, j));
+                        deadends.add(new Tile(i, j));
                     }
                 }
             }
