@@ -6,7 +6,10 @@ public class Wallfollower {
     char[][] maze;
     int iY;
     int iX;
-    StringBuilder route;
+    String route;
+    private String[][] routes;
+
+
     
     public Wallfollower() {
     }
@@ -14,7 +17,7 @@ public class Wallfollower {
     public String searchPath(char[][] laby) {
         this.maze = laby;
         this.visited = new boolean[laby.length][laby[0].length];
-        route = new StringBuilder();
+        this.routes = new String[laby.length][laby[0].length];
         
         for (int i = 1; i < maze.length; i++) {
             for (int j = 1 ;j < maze[0].length; j++) {
@@ -33,42 +36,41 @@ public class Wallfollower {
         
         depthFirst(iY, iX);
         
-        return route.toString();
+        return route;
     }
     
-    public void depthFirst(int y, int x) {
-        if (visited[y][x]) {
-            return;
-        }
+    public void depthFirst(int y, int x) {                
         visited[y][x]=true;
         
-        for(int i = 0; i <= 3; i++) {
+        if (maze[y][x]=='F') {
+            route=routes[y][x];
+            return;
+        }
+        
+        
 
-                if (i == 0) {
-                    if (y < maze.length-1 && maze[y + 1][x] != '@') {
-                        route.append("A");
-                        depthFirst(y + 1, x);
-                    }
-
-                } else if (i == 1) {
-
-                    if (y > 0 && maze[y - 1][x]!= '@') {
-                        route.append("Y");
-                        depthFirst(y - 1, x);
-                    }               
-                } else if (i == 2) {
-                    if (0 < x && maze[y][x - 1] != '@') {
-                        route.append("V");
-                        depthFirst(y, x - 1); 
-                    }
-                } else if (i == 3) {
-                    if (x < maze[0].length - 1 && maze[y][x + 1] != '@') {
-                        route.append("O");
-                        depthFirst(y, x + 1);
-
-                    }
-                }
-
+                
+            if (y < maze.length-1 && maze[y + 1][x] != '@' && !visited[y + 1][x]) {
+                routes[y + 1][x] = routes[y][x] + "A";
+                depthFirst(y + 1, x);
             }
+
+            if (y > 0 && maze[y - 1][x]!= '@' && !visited[y - 1][x]) {
+                routes[y - 1][x] = routes[y][x] + "Y";
+                depthFirst(y - 1, x);
+            }               
+                
+            if (0 < x && maze[y][x - 1] != '@' && !visited[y][x -1]) {
+                routes[y][x - 1]=routes[y][x] + "V";
+                depthFirst(y, x - 1); 
+            }
+                
+            if (x < maze[0].length - 1 && maze[y][x + 1] != '@' && !visited[y][x + 1]) {
+                routes[y][x + 1] = routes[y][x] + "O";
+                depthFirst(y, x + 1);
+            }
+                
+
+            
     }
 }
