@@ -16,32 +16,33 @@ public class Wallfollower {
         this.maze = laby;
         this.visited = new boolean[laby.length][laby[0].length];
         this.routes = new String[laby.length][laby[0].length];
+        this.route = "no path available";
         this.iY = -1;
         this.iX = -1;
         
         for (int i = 1; i < maze.length; i++) {
             for (int j = 1 ;j < maze[0].length; j++) {
-                String s = Character.toString(maze[i][j]);
-          
+                String s = Character.toString(maze[i][j]);         
                 if (s.equals("S")) {
                     iY = i;
                     iX = j;
                 }
             }
         }
-     
+        
         if (iX == -1 || iY == -1) {
             return null;
         }
+        routes[iY][iX] = "";
         
         depthFirst(iY, iX);       
-        return route;
+        return this.route;
     }
     
     public void depthFirst(int y, int x) {                
-        visited[y][x]=true;
+        visited[y][x] = true;
         
-        if (maze[y][x]=='F') {
+        if (maze[y][x] == 'F') {
             route=routes[y][x];
             return;
         }
@@ -57,7 +58,7 @@ public class Wallfollower {
         }               
                 
         if (0 < x && isUncharted(y, x - 1)) {
-            routes[y][x - 1]=routes[y][x] + "V";
+            routes[y][x - 1] = routes[y][x] + "V";
             depthFirst(y, x - 1); 
         }
                 
@@ -68,16 +69,11 @@ public class Wallfollower {
     }
     
     public boolean isUncharted(int y, int x) {
-
         String s = Character.toString(maze[y][x]);
-
         if (s.equals("@") || visited[y][x] == true) {
-
             return false;
-
         } else 
             visited[y][x] = true;
             return true;
-
     }
 }

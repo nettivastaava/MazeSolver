@@ -12,13 +12,12 @@ public class BreadthFirst {
     ArrayDeque<Integer> xj;
     String[][] routes;
     
-    public BreadthFirst() {
-    
+    public BreadthFirst() {   
     }
     
     public String bfs(char[][] maze) {
         this.maze = maze;
-        this.route=null;
+        this.route="no path available";
         this.visited = new boolean[maze.length][maze[0].length];
         this.routes = new String [maze.length][maze[0].length];
 
@@ -63,11 +62,9 @@ public class BreadthFirst {
     public void searchNeighbors(int y, int x) {
         yj.addFirst(y);
         xj.addFirst(x);
-
         while (!xj.isEmpty() && !yj.isEmpty()) {
-
+           
             y = yj.removeFirst();
-
             x = xj.removeFirst();
 
             visited[y][x] = true;
@@ -100,20 +97,16 @@ public class BreadthFirst {
             if (x < maze[0].length - 1 && isUncharted(y, x + 1)) {
                 yj.addLast(y);
                 xj.addLast(x + 1);
-                this.routes[y][x + 1]=routes[y][x] + "O";
+                routes[y][x + 1]=routes[y][x] + "O";
             }            
         }
     }
   
 
     public boolean isUncharted(int y, int x) {
-
         String s = Character.toString(maze[y][x]);
-
         if (s.equals("@") || visited[y][x] == true) {
-
             return false;
-
         } else 
             visited[y][x] = true;
             return true;
