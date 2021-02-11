@@ -14,4 +14,6 @@
 | 05.02.2021 | 2 | DeadendFillerin viimeistely ja yleisiä parannuksia |
 | 05.02.2021 | 2 | Seuraavien työvaiheiden suunnittelu ja aikavaativuuksien tutkiminen |
 | 05.02.2021 | 1 | Wallfollowerin aloittaminen |
-| Yht. | 26 | |
+| 11.02.2011 | 2 | Wallfollowerin viimeistely ja testaaminen |
+| 11.02.2011 | 2 | Listarakenteen aloittaminen |
+| Yht. | 30 | |
