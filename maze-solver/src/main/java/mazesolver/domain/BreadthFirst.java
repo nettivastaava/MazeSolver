@@ -7,7 +7,6 @@ public class BreadthFirst {
     char[][] maze;
     String route;
     boolean[][] visited;
-    ArrayList<Integer>[] net;
     ArrayDeque<Integer> yj;
     ArrayDeque<Integer> xj;
     String[][] routes;
@@ -21,17 +20,8 @@ public class BreadthFirst {
         this.visited = new boolean[maze.length][maze[0].length];
         this.routes = new String [maze.length][maze[0].length];
 
-        int n = 9998;
-
-        this.net = new ArrayList[9999];
-
-        for (int i = 1; i <= n; i++) { 
-            net[i] = new ArrayList<>();
-        }
-
         yj = new ArrayDeque<Integer>();
         xj = new ArrayDeque<Integer>();
-
         
         int iX =- 1;
         int iY =- 1;

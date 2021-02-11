@@ -67,10 +67,7 @@ public class Maze {
         } else if (x > 0 && maze[y][x - 1] != '@') {
             route.append("V");
             findPath(y, x - 1);
-        }
-
-      
-        
+        }        
     }
     
     public void fillDeadends() {
