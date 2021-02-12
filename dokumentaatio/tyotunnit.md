@@ -17,4 +17,5 @@
 | 11.02.2021 | 2 | Wallfollowerin viimeistely ja testaaminen |
 | 11.02.2021 | 2 | Listarakenteen aloittaminen |
 | 12.02.2021 | 2 | Dokumentointi |
-| Yht. | 32 | |
+| 12.02.2021 | 3 | Algoritmien vertailua ja bugien korjailua |
+| Yht. | 35 | |
