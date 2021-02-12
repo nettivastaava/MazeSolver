@@ -92,7 +92,15 @@ public class BreadthFirst {
         }
     }
   
-
+    /**
+     * Checks if the corresponding tile is unvisited and that it is not a wall
+     * 
+     * @param y indicates the row of the tile
+     * 
+     * @param x.indicates the column of the tile
+     * 
+     * @return true if the tile is yet unvisited and false, if not
+     */
     public boolean isUncharted(int y, int x) {
         String s = Character.toString(maze[y][x]);
         if (s.equals("@") || visited[y][x] == true) {

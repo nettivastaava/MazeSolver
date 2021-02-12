@@ -4,22 +4,24 @@ package mazesolver.domain;
 import java.awt.Point;
 import java.io.File;
 import mazesolver.domain.Tile;
-import mazesolver.domain.StackStructure;
+import mazesolver.domain.SimpleStack;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
+/**
+* The class that reads an ASCII maze from a file and creates a corresponding object (DeadendFiller will be moved into a separate class later)
+*/
 public class Maze {
     char[][] maze;
-    StackStructure deadends;
+    SimpleStack deadends;
     int pathY;
     int pathX;
     StringBuilder route;
     
     public Maze(int n, int m, String file) {
         maze = new char[n][m];
-        deadends = new StackStructure();
+        deadends = new SimpleStack();
         route=new StringBuilder();
         
         try {
@@ -41,15 +43,27 @@ public class Maze {
         
     }
     
+    /**
+     * The main method which invokes all the other method calls used to execute the algorithm.
+     *
+     * @return String that corresponds the transitions required to move from S to F.
+     */
     public String solve() {
         findDeadends();
         fillDeadends();
-        printMaze();
         findPath(pathY, pathX);
         return "DEF: " + route.toString();
         
     }
     
+    /**
+     * Builds the string that corresponds the transitions needed to get from S to F
+     * 
+     * @param y indicates the row of the tile
+     * 
+     * @param x indicates the column of the tile
+     * 
+     */
     public void findPath(int y, int x) {
         if (maze[y][x]=='F') {
             return;
@@ -71,6 +85,9 @@ public class Maze {
         }        
     }
     
+    /**
+     * Iterates through all the dead ends and invokes the method used to actually fill them.
+     */
     public void fillDeadends() {
         while(deadends.isNotEmpty()) {
                 Tile current = (Tile) deadends.getNext();   
@@ -78,6 +95,14 @@ public class Maze {
         }
     }
     
+    /**
+     * Fills the tile with a wall and checks if its neighbours are dead ends as well.
+     * 
+     * @param i indicates the row of the tile
+     * 
+     * @param j indicates the column of the tile
+     * 
+     */
     public void fillOne(int i, int j) {
         maze[i][j] = '@';
         
@@ -96,6 +121,9 @@ public class Maze {
         
     }
     
+    /**
+     * Locates all the dead ends from the maze and stores them in a stack
+     */
     public void findDeadends() {
                
         for (int i = 0; i < maze.length; i++) {
@@ -110,6 +138,15 @@ public class Maze {
         
     }
     
+    /**
+     * Counts the neighbours of the tile and determines whether it is a dead end or not
+     * 
+     * @param i indicates the row of the tile
+     * 
+     * @param j indicates the column of the title
+     * 
+     * @return true if the tile is a dead end and false, if not
+     */
     public boolean isDeadend(int i, int j) {
         int neighbors = 0;
         if (i > 0 && maze[i - 1][j] != '@') {
@@ -129,7 +166,10 @@ public class Maze {
         }
         return false;
     }
-
+    
+    /**
+     * Prints the ASCII visualization of the maze
+     */
     public void printMaze() {
         for (int i = 0; i < maze.length; i++) {
             for (int j = 0; j < maze[i].length; j++) {
@@ -144,7 +184,7 @@ public class Maze {
         return maze;
     }
 
-    public StackStructure getDeadends() {
+    public SimpleStack getDeadends() {
         return deadends;
     }
     

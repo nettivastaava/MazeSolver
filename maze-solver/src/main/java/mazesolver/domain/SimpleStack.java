@@ -2,16 +2,23 @@
 package mazesolver.domain;
 
 
-
-public class StackStructure<T> {
+/**
+* A simplified version of the Java's class Stack used to keep track of the unfilled dead ends
+*/
+public class SimpleStack<T> {
     private T[] values;
     private int size;
     
-    public StackStructure() {
+    public SimpleStack() {
         this.values = (T[]) new Object[10];
         this.size = 0;
     }
     
+     /**
+     * Adds an object to the top of the stack
+     * 
+     * @param value The element to be added
+     */
     public void addValue(T value) {
         this.values[size] = value;
         this.size++;
@@ -60,6 +67,11 @@ public class StackStructure<T> {
         return size;
     }
     
+     /**
+     * The method used to check if the stack has any values in it
+     *
+     * @return True if the stack has any values in it, otherwise returns false
+     */
     public boolean isNotEmpty() {
         return this.size > 0;
     }
