@@ -15,7 +15,7 @@
 | 05.02.2021 | 2 | Seuraavien työvaiheiden suunnittelu ja aikavaativuuksien tutkiminen |
 | 05.02.2021 | 1 | Wallfollowerin aloittaminen |
 | 11.02.2021 | 2 | Wallfollowerin viimeistely ja testaaminen |
-| 11.02.2021 | 2 | Listarakenteen aloittaminen |
+| 11.02.2021 | 2 | Pinorakenteen alustava toteutus |
 | 12.02.2021 | 2 | Dokumentointi |
 | 12.02.2021 | 3 | Algoritmien vertailua ja bugien korjailua |
 | Yht. | 35 | |
