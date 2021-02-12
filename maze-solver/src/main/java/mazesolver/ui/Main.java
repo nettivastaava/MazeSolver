@@ -8,13 +8,11 @@ import mazesolver.domain.StackStructure;
 public class Main {
     public static void main(String[] args) { 
         
-        Maze m = new Maze(10, 10, "maze2.txt");
+        Maze m = new Maze(20, 20, "maze4.txt");
         
         BreadthFirst bfs1 = new BreadthFirst();
         Wallfollower wf1 = new Wallfollower();
-        
-        
-        
+               
         System.out.println("WF: " + wf1.searchPath(m.getMaze()));
         System.out.println("");
         System.out.println("BFS: " + bfs1.bfs(m.getMaze()));
@@ -23,11 +21,6 @@ public class Main {
         m.printMaze();
         System.out.println(m.solve());
         System.out.println("");
-        
-
-        
-        
-    
         
     }
 }

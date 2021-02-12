@@ -25,7 +25,7 @@ public class StackStructure<T> {
         
         T[] newList = (T[]) new Object[newSize];
         
-        for (int i = 0; i < values.length; i++) {
+        for (int i = 0; i < size; i++) {
             newList[i] = values[i];
         }
         
@@ -33,11 +33,11 @@ public class StackStructure<T> {
     }
     
     public void decreaseCapacity() {
-        int newSize = size / 2;
+        int newSize = values.length / 2;
         
         T[] newList = (T[]) new Object[newSize];
         
-        for (int i = 0; i < values.length; i++) {
+        for (int i = 0; i < size; i++) {
             newList[i] = values[i];
         }
         
@@ -49,7 +49,7 @@ public class StackStructure<T> {
         values[size-1]=null;
         size--;
         
-        if (this.values.length / 4 > size && this.values.length > 10) {
+        if (this.values.length > 10 && this.values.length / 4 > size) {
             decreaseCapacity();
         }
         
