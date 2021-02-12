@@ -6,6 +6,8 @@
 
 [Työaikakirjanpito](https://github.com/nettivastaava/MazeSolver/blob/master/dokumentaatio/tyotunnit.md)
 
+[Testaus](https://github.com/nettivastaava/MazeSolver/blob/master/dokumentaatio/testaus.md)
+
 ### Viikkoraportit
 
 - [Viikko 1](https://github.com/nettivastaava/MazeSolver/blob/master/dokumentaatio/viikkoraportti1.md)
