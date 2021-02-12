@@ -6,6 +6,7 @@
 - Pieniä parannuksia aikaisemmin toteutettuihin osioihin
 - Omien tietorakenteiden aloittaminen ja manuaalinen testaaminen
 - Dokumentaation kirjoittaminen
+- Javadocin aloittaminen
 
 Viikko eteni hyvin tarkasti tavoitteiden mukaisesti. Itse koodaaminen eteni joutuisasti ja huomattava osa käytetyistä työtunneista menikin tietorakenteiden kertaamiseen. 
 
