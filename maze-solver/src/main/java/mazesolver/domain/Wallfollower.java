@@ -21,7 +21,7 @@ public class Wallfollower {
         this.iX = -1;
         
         for (int i = 1; i < maze.length; i++) {
-            for (int j = 1 ;j < maze[0].length; j++) {
+            for (int j = 1; j < maze[0].length; j++) {
                 String s = Character.toString(maze[i][j]);         
                 if (s.equals("S")) {
                     iY = i;
@@ -43,11 +43,11 @@ public class Wallfollower {
         visited[y][x] = true;
         
         if (maze[y][x] == 'F') {
-            route=routes[y][x];
+            route = routes[y][x];
             return;
         }
                 
-        if (y < maze.length-1 && isUncharted(y + 1, x)) {
+        if (y < maze.length - 1 && isUncharted(y + 1, x)) {
             routes[y + 1][x] = routes[y][x] + "A";
             depthFirst(y + 1, x);
         }
@@ -70,10 +70,11 @@ public class Wallfollower {
     
     public boolean isUncharted(int y, int x) {
         String s = Character.toString(maze[y][x]);
-        if (s.equals("@") || visited[y][x] == true) {
+        if (s.equals("@") || visited[y][x]) {
             return false;
-        } else 
+        } else {
             visited[y][x] = true;
             return true;
+        }
     }
 }

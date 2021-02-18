@@ -2,9 +2,6 @@
 package mazesolver.domain;
 
 
-/**
-* A simplified version of the Java's class Stack used to keep track of the unfilled dead ends
-*/
 public class SimpleStack<T> {
     private T[] values;
     private int size;
@@ -22,13 +19,13 @@ public class SimpleStack<T> {
     public void addValue(T value) {
         this.values[size] = value;
         this.size++;
-        if (this.values.length/2 < size)  {
+        if (this.values.length / 2 < size)  {
             increaseCapacity();
         }
     }
     
     public void increaseCapacity() {
-        int newSize = size * 2;
+        int newSize = values.length * 2;
         
         T[] newList = (T[]) new Object[newSize];
         
@@ -52,8 +49,8 @@ public class SimpleStack<T> {
     }
     
     public T getNext() {
-        T next = values[size-1];
-        values[size-1]=null;
+        T next = values[size - 1];
+        values[size - 1] = null;
         size--;
         
         if (this.values.length > 10 && this.values.length / 4 > size) {
@@ -61,6 +58,10 @@ public class SimpleStack<T> {
         }
         
         return next;
+    }
+
+    public T[] getValues() {
+        return values;
     }
 
     public int getSize() {
@@ -74,7 +75,5 @@ public class SimpleStack<T> {
      */
     public boolean isNotEmpty() {
         return this.size > 0;
-    }
-    
-    
+    }  
 }

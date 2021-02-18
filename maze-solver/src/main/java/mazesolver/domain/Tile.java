@@ -7,8 +7,8 @@ public class Tile {
     int x;
     
     public Tile(int y, int x) {
-        this.y=y;
-        this.x=x;
+        this.y = y;
+        this.x = x;
     }
     
     public String toString() {

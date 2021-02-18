@@ -22,7 +22,7 @@ public class Maze {
     public Maze(int n, int m, String file) {
         maze = new char[n][m];
         deadends = new SimpleStack();
-        route=new StringBuilder();
+        route = new StringBuilder();
         
         try {
             Scanner input = new Scanner(new File(file));
@@ -32,14 +32,15 @@ public class Maze {
 
                 for (int j = 0; j < m; j++) {
                     maze[i][j] = s.charAt(j);
-                    if (maze[i][j]=='S') {
-                        pathY=i;
-                        pathX=j;
+                    if (maze[i][j] == 'S') {
+                        pathY = i;
+                        pathX = j;
                     }
                 }
             }
 
-        } catch (Exception e) {}
+        } catch (Exception e) { 
+        }
         
     }
     
@@ -65,10 +66,10 @@ public class Maze {
      * 
      */
     public void findPath(int y, int x) {
-        if (maze[y][x]=='F') {
+        if (maze[y][x] == 'F') {
             return;
         } 
-        maze[y][x]='@';
+        maze[y][x] = '@';
         
         if (y > 0 && maze[y - 1][x] != '@') {          
             route.append("Y");
@@ -90,8 +91,8 @@ public class Maze {
      */
     public void fillDeadends() {
         while(deadends.isNotEmpty()) {
-                Tile current = (Tile) deadends.getNext();   
-                fillOne(current.y, current.x);              
+            Tile current = (Tile) deadends.getNext();   
+            fillOne(current.y, current.x);              
         }
     }
     
@@ -109,10 +110,10 @@ public class Maze {
         if (i > 1 && maze[i - 1][j] == '.' && isDeadend(i - 1, j)) {
             deadends.addValue(new Tile(i - 1, j));
         } 
-        if (j < maze[0].length-2 && maze[i][j + 1] == '.' && isDeadend(i, j + 1)) {
+        if (j < maze[0].length - 2 && maze[i][j + 1] == '.' && isDeadend(i, j + 1)) {
             deadends.addValue(new Tile(i, j + 1));
         } 
-        if (i < maze.length-2 && maze[i + 1][j] == '.' && isDeadend(i + 1, j)) {
+        if (i < maze.length - 2 && maze[i + 1][j] == '.' && isDeadend(i + 1, j)) {
             deadends.addValue(new Tile(i + 1, j));
         } 
         if (j > 1 && maze[i][j - 1] == '.' && isDeadend(i, j - 1)) {

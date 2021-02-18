@@ -16,12 +16,12 @@ public class BreadthFirst {
     
     public String bfs(char[][] maze) {
         this.maze = maze;
-        this.route="no path available";
+        this.route = "no path available";
         this.visited = new boolean[maze.length][maze[0].length];
         this.routes = new String [maze.length][maze[0].length];
 
-        yj = new ArrayDeque<Integer>();
-        xj = new ArrayDeque<Integer>();
+        yj = new ArrayDeque<>();
+        xj = new ArrayDeque<>();
         
         int iX =- 1;
         int iY =- 1;
@@ -66,7 +66,7 @@ public class BreadthFirst {
                 return;          
             }
 
-            if (y < maze.length-1 && isUncharted(y + 1, x)) {
+            if (y < maze.length - 1 && isUncharted(y + 1, x)) {
                 yj.addLast(y + 1);
                 xj.addLast(x);  
                 routes[y + 1][x] = routes[y][x] + "A";
@@ -87,7 +87,7 @@ public class BreadthFirst {
             if (x < maze[0].length - 1 && isUncharted(y, x + 1)) {
                 yj.addLast(y);
                 xj.addLast(x + 1);
-                routes[y][x + 1]=routes[y][x] + "O";
+                routes[y][x + 1] = routes[y][x] + "O";
             }            
         }
     }
@@ -97,17 +97,17 @@ public class BreadthFirst {
      * 
      * @param y indicates the row of the tile
      * 
-     * @param x.indicates the column of the tile
+     * @param x indicates the column of the tile
      * 
      * @return true if the tile is yet unvisited and false, if not
      */
     public boolean isUncharted(int y, int x) {
         String s = Character.toString(maze[y][x]);
-        if (s.equals("@") || visited[y][x] == true) {
+        if (s.equals("@") || visited[y][x]) {
             return false;
-        } else 
+        } else  {
             visited[y][x] = true;
             return true;
-
+        }
     }
 }
