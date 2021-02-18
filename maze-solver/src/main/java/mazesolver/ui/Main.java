@@ -3,7 +3,7 @@ package mazesolver.ui;
 import mazesolver.domain.BreadthFirst;
 import mazesolver.domain.Maze;
 import mazesolver.domain.Wallfollower;
-import mazesolver.domain.SimpleStack;
+import mazesolver.domain.MazeQueue;
 
 public class Main {
     public static void main(String[] args) { 
@@ -34,6 +34,7 @@ public class Main {
         elapsed = end - start;
         System.out.println(elapsed);
         System.out.println("");
+        
         
     }
 }

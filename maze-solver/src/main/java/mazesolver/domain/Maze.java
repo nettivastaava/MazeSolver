@@ -1,12 +1,9 @@
 
 package mazesolver.domain;
 
-import java.awt.Point;
 import java.io.File;
 import mazesolver.domain.Tile;
 import mazesolver.domain.SimpleStack;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
