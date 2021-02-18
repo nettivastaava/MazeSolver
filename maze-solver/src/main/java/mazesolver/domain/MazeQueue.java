@@ -63,6 +63,18 @@ public class MazeQueue<T> {
         
         return first;
     }
+
+    public T[] getValues() {
+        return values;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public int getIndexOfFirst() {
+        return indexOfFirst;
+    }
     
     public boolean isNotEmpty() {
         return this.size > 0;

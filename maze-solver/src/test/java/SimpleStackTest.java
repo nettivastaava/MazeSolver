@@ -1,15 +1,8 @@
 
 import mazesolver.domain.SimpleStack;
-import mazesolver.domain.Maze;
-import org.junit.Test;
 import static org.junit.Assert.*;
-import java.io.File;
-import java.io.FileWriter;
-import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.TemporaryFolder;
 
 public class SimpleStackTest {
     SimpleStack s;
