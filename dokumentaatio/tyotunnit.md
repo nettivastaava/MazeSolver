@@ -20,4 +20,5 @@
 | 12.02.2021 | 3 | Algoritmien vertailua ja bugien korjailua |
 | 18.02.2021 | 2 | Jonorakenne ja testit |
 | 18.02.2021 | 2 | Refaktorointia |
-| Yht. | 39 | |
+| 19.02.2021 | 2 | Testien yleiset laajennukset |
+| Yht. | 41 | |
