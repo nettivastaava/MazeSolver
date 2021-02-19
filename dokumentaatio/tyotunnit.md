@@ -18,4 +18,6 @@
 | 11.02.2021 | 2 | Pinorakenteen alustava toteutus |
 | 12.02.2021 | 2 | Dokumentointi |
 | 12.02.2021 | 3 | Algoritmien vertailua ja bugien korjailua |
-| Yht. | 35 | |
+| 18.02.2021 | 2 | Jonorakenne ja testit |
+| 18.02.2021 | 2 | Refaktorointia |
+| Yht. | 39 | |
