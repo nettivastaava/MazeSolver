@@ -10,13 +10,14 @@ public class DeadendFiller {
     StringBuilder route;
     
     public DeadendFiller() {
+        deadends = new SimpleStack();
     }
     
     public String findPath(char[][] laby) {
         this.maze = laby;
         this.pathY = -1;
         this.pathX = -1;
-        deadends = new SimpleStack();
+        
         route = new StringBuilder();
         
         for (int i = 1; i < maze.length; i++) {
@@ -40,7 +41,7 @@ public class DeadendFiller {
         findDeadends();
         fillDeadends();
         findPath(pathY, pathX);
-        return "DEF: " + route.toString();
+        return route.toString();
         
     }
     
@@ -151,21 +152,9 @@ public class DeadendFiller {
         } 
         if (neighbors == 1) {
             return true;
+        } else {
+            return false;
         }
-        return false;
-    }
-    
-    /**
-     * Prints the ASCII visualization of the maze
-     */
-    public void printMaze() {
-        for (int i = 0; i < maze.length; i++) {
-            for (int j = 0; j < maze[i].length; j++) {
-                System.out.print(maze[i][j]);
-            }
-            System.out.print("\n");
-        }
-        System.out.println("");
     }
 
     public char[][] getMaze() {
@@ -175,5 +164,11 @@ public class DeadendFiller {
     public SimpleStack getDeadends() {
         return deadends;
     }
+ 
+    public void setMaze(char[][] maze) {
+        this.maze = maze;
+    }
+    
+    
     
 }

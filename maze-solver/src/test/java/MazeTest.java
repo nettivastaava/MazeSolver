@@ -3,6 +3,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.Scanner;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -27,9 +28,7 @@ public class MazeTest {
                 file.write("@..F@@..@\n");
                 file.write("@@@@@@@@@\n");
             }
-            
-            
-            
+                     
             maze = new Maze(6, 9, asciiFile.getAbsolutePath());
         }
         
@@ -40,30 +39,25 @@ public class MazeTest {
         }
         
         @Test
-        public void startAndEndAreCorrectlyPlacedInArray() {
+        public void startAndEndPointsAreCorrectlyPlacedInArray() {
             assertEquals('S', maze.getMaze()[1][1]);
             assertEquals('F', maze.getMaze()[4][3]);
         }
         
         @Test
-        public void correctAmountOfDeadends() {
-            maze.findDeadends();
-                    
-            assertEquals(maze.getDeadends().getSize(), 2);
-        
-        }
-        
-        @Test
-        public void noDeadendsAfterFilling() {
-            maze.fillDeadends();
-            assertEquals(0, maze.getDeadends().getSize());
-        }
-        
-        @Test
-        public void correctPathIsFound() {
-            assertEquals("DEF: AAAOO", maze.solve());            
-        }
+        public void mazeIsPrintedCorrectly() {
+            try {
+                Scanner input = new Scanner(asciiFile);
 
+                for (int i = 0; i < maze.getMaze().length; i++) {
+                    String s = input.next();
+                    for (int j = 0; j < maze.getMaze()[0].length; j++) {
+                        assertEquals(maze.getMaze()[i][j], s.charAt(j));
+                    }
+                }
+            } catch (Exception e) { 
+            }
+        }
         
         @After
         public void tearDown() {

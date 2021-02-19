@@ -1,14 +1,13 @@
 package mazesolver.domain;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
 
 public class BreadthFirst {
     char[][] maze;
     String route;
     boolean[][] visited;
-    ArrayDeque<Integer> yj;
-    ArrayDeque<Integer> xj;
+    MazeQueue yj;
+    MazeQueue xj;
     String[][] routes;
     
     public BreadthFirst() {   
@@ -20,8 +19,8 @@ public class BreadthFirst {
         this.visited = new boolean[maze.length][maze[0].length];
         this.routes = new String [maze.length][maze[0].length];
 
-        yj = new ArrayDeque<>();
-        xj = new ArrayDeque<>();
+        yj = new MazeQueue();
+        xj = new MazeQueue();
         
         int iX =- 1;
         int iY =- 1;
@@ -50,12 +49,12 @@ public class BreadthFirst {
     }
 
     public void searchNeighbors(int y, int x) {
-        yj.addFirst(y);
-        xj.addFirst(x);
-        while (!xj.isEmpty() && !yj.isEmpty()) {
+        yj.addLast(y);
+        xj.addLast(x);
+        while (xj.isNotEmpty() && yj.isNotEmpty()) {
            
-            y = yj.removeFirst();
-            x = xj.removeFirst();
+            y = (int) yj.removeFirst();
+            x = (int) xj.removeFirst();
 
             visited[y][x] = true;
 

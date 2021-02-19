@@ -8,7 +8,7 @@ import mazesolver.domain.DeadendFiller;
 public class Main {
     public static void main(String[] args) { 
         
-        Maze m = new Maze(6, 9, "maze1.txt");
+        Maze m = new Maze(20, 20, "maze4.txt");
                 
         m.printMaze();
         BreadthFirst bfs1 = new BreadthFirst();
