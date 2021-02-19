@@ -4,7 +4,7 @@ Ohjelmaa varten on toteutettu automatisoituja yksikkötestejä JUnitilla. Tämä
 
 ### **Testauskattavuus**
 
-Tällä hetkellä testauksen rivi- ja haaraumakattavuudet ovat melko korkeat: algoritmien osalta noin 80-100%. Myös tietorakenteille on toteutettu omia JUnit-testejä, minkä lisäksi niitä testataan välillisesti myös osana algoritmeja.
+Tällä hetkellä testauksen rivi- ja haaraumakattavuudet ovat korkeat: algoritmien osalta noin 80-100%. Myös tietorakenteille on toteutettu omia JUnit-testejä, minkä lisäksi niitä testataan välillisesti myös osana algoritmeja.
 
 ### **Ongelmat**
 
