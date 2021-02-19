@@ -6,4 +6,4 @@ Ohjelman runko koostuu luokista Maze, DeadendFiller, BreadthFirst ja Wallfollowe
 
 ## **Algoritmien vertailu ja analyysi**
 
-Algoritmitmien alustavat toteutukset ovat vasta valmistuneet eikä vertailua ole päästy vielä toteuttamaan kovin laajasti. Alustavat testit viittaavat siihen, että leveyshaku on isossa osaa tapauksia nopein. Wallfollower vaikuttaa (odotetusti) olevan tehokas suoraviivaisissa labyrinteissä, joissa on vähän haarautumia. Olin olettanut, että DeadendFiller olisi ollut kaikissa tapauksissa hitain, mutta yllätyksekseni isossa labyrintissä se osoittautui tehokkaimmaksi. Onkin mahdollista, että algoritmien toteutuksissa on vielä vikoja, jotka "vääristävät" tuloksia.
+Ensimmäiset testit osoittivat, että DeadendFiller olisi odotetusti hitain ja leveyshaku keskimäärin nopein. Kuitenkin vaihtaessani omat tietorakenteeni algoritmeihin, huomasin, että etenkin leveyshaku hidastui merkittävästi. Vaikuttaisikin siltä, että näiden tietorakenteiden toteutuksissa on vielä hiomista, jotta vertailu tuottaisi "oikean" tuloksen.
