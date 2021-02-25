@@ -22,4 +22,5 @@
 | 18.02.2021 | 2 | Refaktorointia |
 | 19.02.2021 | 2 | Testien yleiset laajennukset |
 | 19.02.2021 | 3 | Algoritmien vertailua ja korjauksia |
-| Yht. | 44 | |
+| 25.02.2021 | 2 | Testien korjaaminen vastaamaan muutoksia |
+| Yht. | 46 | |
