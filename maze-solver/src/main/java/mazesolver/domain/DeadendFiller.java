@@ -14,6 +14,7 @@ public class DeadendFiller {
     }
     
     public String findPath(char[][] laby) {
+
         this.maze = laby;
         this.pathY = -1;
         this.pathX = -1;

@@ -15,26 +15,16 @@ public class Main {
         Wallfollower wf1 = new Wallfollower();
         DeadendFiller df1 = new DeadendFiller();
         
-        long start = System.nanoTime();
-        System.out.println("WF: " + wf1.searchPath(m.getMaze()));
-        long end = System.nanoTime();
-        long elapsed = end - start;
-        System.out.println(elapsed);
-        System.out.println("");
+     
         
-        start = System.nanoTime();
+        double start = System.nanoTime();
         System.out.println("BFS: " + bfs1.bfs(m.getMaze()));
-        end = System.nanoTime();
-        elapsed = end - start;
+        double end = System.nanoTime();
+        double elapsed = end - start;
         System.out.println(elapsed);
         System.out.println("");
         
-        start = System.nanoTime();
-        System.out.println("DEF: " + df1.findPath(m.getMaze()));
-        end = System.nanoTime();
-        elapsed = end - start;
-        System.out.println(elapsed);
-        System.out.println("");
+  
         
     }
 }
