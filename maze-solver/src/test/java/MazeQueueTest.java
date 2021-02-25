@@ -46,20 +46,32 @@ public class MazeQueueTest {
     }
     
     @Test
-    public void sizeIsDoubled() {
+    public void increasingCapacityWorks() {
         assertEquals(queue.getValues().length, 10);
         
         queue.increaseCapacity();
         
-        assertEquals(queue.getValues().length, 20);
+        assertEquals(queue.getValues().length, 15);
     }
     
     @Test
-    public void sizeIsHalved() {
+    public void sizeIsDecreased() {
         assertEquals(queue.getValues().length, 10);
+        queue.addLast(1);
+        queue.addLast(2);
+        queue.addLast(1);
+        queue.addLast(2);
+        queue.addLast(1);
+        queue.addLast(2);
+        
+        queue.removeFirst();
+        queue.removeFirst();
+        queue.removeFirst();
+        queue.removeFirst();
+        queue.removeFirst();
         
         queue.decreaseCapacity();
         
-        assertEquals(queue.getValues().length, 5);
+        assertEquals(queue.getValues().length, 6);
     }
 }

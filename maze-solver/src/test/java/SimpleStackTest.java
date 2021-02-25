@@ -36,12 +36,12 @@ public class SimpleStackTest {
     }
     
     @Test
-    public void sizeIsDoubled() {
+    public void increasingCapacityWorks() {
         assertEquals(s.getValues().length, 10);
         
         s.increaseCapacity();
         
-        assertEquals(s.getValues().length, 20);
+        assertEquals(s.getValues().length, 15);
     }
     
     @Test

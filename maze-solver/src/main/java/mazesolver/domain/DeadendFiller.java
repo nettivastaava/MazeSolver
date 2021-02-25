@@ -7,7 +7,7 @@ public class DeadendFiller {
     SimpleStack deadends;
     int pathY;
     int pathX;
-    StringBuilder route;
+    String route;
     
     public DeadendFiller() {
         deadends = new SimpleStack();
@@ -18,7 +18,7 @@ public class DeadendFiller {
         this.pathY = -1;
         this.pathX = -1;
         
-        route = new StringBuilder();
+        route = "";
         
         for (int i = 1; i < maze.length; i++) {
             for (int j = 1; j < maze[0].length; j++) {
@@ -26,6 +26,7 @@ public class DeadendFiller {
                 if (s.equals("S")) {
                     pathY = i;
                     pathX = j;
+                    break;
                 }
             }
         }
@@ -41,7 +42,7 @@ public class DeadendFiller {
         findDeadends();
         fillDeadends();
         findPath(pathY, pathX);
-        return route.toString();
+        return route;
         
     }
     
@@ -60,16 +61,16 @@ public class DeadendFiller {
         maze[y][x] = '@';
         
         if (y > 0 && maze[y - 1][x] != '@') {          
-            route.append("Y");
+            route = route + "Y";
             findPath(y - 1, x);
         } else if (x < maze[0].length - 1 && maze[y][x + 1] != '@') {
-            route.append("O");
+            route = route + "O";
             findPath(y, x + 1);
         } else if (y < maze.length - 1 && maze[y + 1][x] != '@') {
-            route.append("A");
+            route = route + "A";
             findPath(y + 1, x);
         } else if (x > 0 && maze[y][x - 1] != '@') {
-            route.append("V");
+            route = route + "V";
             findPath(y, x - 1);
         }        
     }
@@ -169,6 +170,14 @@ public class DeadendFiller {
         this.maze = maze;
     }
     
-    
+    public void printMaze() {
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze[i].length; j++) {
+                System.out.print(maze[i][j]);
+            }
+            System.out.print("\n");
+        }
+        System.out.println("");
+    }
     
 }

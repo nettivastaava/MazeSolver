@@ -8,7 +8,7 @@ import mazesolver.domain.DeadendFiller;
 public class Main {
     public static void main(String[] args) { 
         
-        Maze m = new Maze(20, 20, "maze4.txt");
+        Maze m = new Maze(40, 60, "maze6.txt");
                 
         m.printMaze();
         BreadthFirst bfs1 = new BreadthFirst();
@@ -35,7 +35,6 @@ public class Main {
         elapsed = end - start;
         System.out.println(elapsed);
         System.out.println("");
-        
         
     }
 }

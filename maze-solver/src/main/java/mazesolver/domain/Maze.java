@@ -5,7 +5,7 @@ import java.io.File;
 import java.util.Scanner;
 
 /**
-* The class that reads an ASCII maze from a file and creates a corresponding object (DeadendFiller will be moved into a separate class later)
+* The class that reads an ASCII maze from a file and creates a corresponding object
 */
 public class Maze {
     char[][] maze;

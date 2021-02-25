@@ -1,7 +1,9 @@
 
 package mazesolver.domain;
 
-
+/**
+* This class is used to keep track of all the remaining dead ends in the labyrinth
+*/
 public class SimpleStack<T> {
     private T[] values;
     private int size;
@@ -19,13 +21,16 @@ public class SimpleStack<T> {
     public void addValue(T value) {
         this.values[size] = value;
         this.size++;
-        if (this.values.length / 2 < size)  {
+        if (this.values.length == size)  {
             increaseCapacity();
         }
     }
     
+    /**
+     * Copies the values from the stack to another, bigger array
+     */
     public void increaseCapacity() {
-        int newSize = values.length * 2;
+        int newSize = values.length + values.length / 2;
         
         T[] newList = (T[]) new Object[newSize];
         
@@ -36,6 +41,9 @@ public class SimpleStack<T> {
         this.values = newList;
     }
     
+    /**
+     *Copies the values from the stack to another, smaller array
+     */
     public void decreaseCapacity() {
         int newSize = values.length / 2;
         
@@ -48,6 +56,11 @@ public class SimpleStack<T> {
         this.values = newList;
     }
     
+    /**
+     *Removes the top element from the stack and returns it
+     * 
+     *@return The top element of the stack
+     */
     public T getNext() {
         T next = values[size - 1];
         values[size - 1] = null;

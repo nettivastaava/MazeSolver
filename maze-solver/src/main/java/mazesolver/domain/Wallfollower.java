@@ -26,6 +26,7 @@ public class Wallfollower {
                 if (s.equals("S")) {
                     iY = i;
                     iX = j;
+                    break;
                 }
             }
         }
@@ -47,22 +48,22 @@ public class Wallfollower {
             return;
         }
                 
-        if (y < maze.length - 1 && isUncharted(y + 1, x)) {
+        if (isUncharted(y + 1, x) && y < maze.length - 1) {
             routes[y + 1][x] = routes[y][x] + "A";
             depthFirst(y + 1, x);
         }
 
-        if (y > 0 && isUncharted(y - 1, x)) {
+        if (isUncharted(y - 1, x) && y > 0) {
             routes[y - 1][x] = routes[y][x] + "Y";
             depthFirst(y - 1, x);
         }               
                 
-        if (0 < x && isUncharted(y, x - 1)) {
+        if (isUncharted(y, x - 1) && 0 < x) {
             routes[y][x - 1] = routes[y][x] + "V";
             depthFirst(y, x - 1); 
         }
                 
-        if (x < maze[0].length - 1 && isUncharted(y, x + 1)) {
+        if (isUncharted(y, x + 1) && x < maze[0].length - 1) {
             routes[y][x + 1] = routes[y][x] + "O";
             depthFirst(y, x + 1);
         }    
@@ -73,7 +74,6 @@ public class Wallfollower {
         if (s.equals("@") || visited[y][x]) {
             return false;
         } else {
-            visited[y][x] = true;
             return true;
         }
     }

@@ -6,8 +6,7 @@ public class BreadthFirst {
     char[][] maze;
     String route;
     boolean[][] visited;
-    MazeQueue yj;
-    MazeQueue xj;
+    MazeQueue que;
     String[][] routes;
     
     public BreadthFirst() {   
@@ -19,19 +18,18 @@ public class BreadthFirst {
         this.visited = new boolean[maze.length][maze[0].length];
         this.routes = new String [maze.length][maze[0].length];
 
-        yj = new MazeQueue();
-        xj = new MazeQueue();
+        que = new MazeQueue();
         
-        int iX =- 1;
-        int iY =- 1;
+        int iX = -1;
+        int iY = -1;
 
         for (int i = 1; i < maze.length; i++) {
-            for (int j = 1 ;j < maze[0].length; j++) {
-                String s = Character.toString(maze[i][j]);
-          
+            for (int j = 1; j < maze[0].length; j++) {
+                String s = Character.toString(maze[i][j]);        
                 if (s.equals("S")) {
                     iY = i;
                     iX = j;
+                    break;
                 }
             }
         }
@@ -49,15 +47,12 @@ public class BreadthFirst {
     }
 
     public void searchNeighbors(int y, int x) {
-        yj.addLast(y);
-        xj.addLast(x);
-        while (xj.isNotEmpty() && yj.isNotEmpty()) {
-           
-            y = (int) yj.removeFirst();
-            x = (int) xj.removeFirst();
-
+        que.addLast(new Tile(y, x));
+        while (que.isNotEmpty()) {
+            Tile t = (Tile) que.removeFirst();
+            y = t.getY();
+            x = t.getX();
             visited[y][x] = true;
-
             String s = Character.toString(maze[y][x]);
 
             if (s.equals("F")) {           
@@ -65,27 +60,23 @@ public class BreadthFirst {
                 return;          
             }
 
-            if (y < maze.length - 1 && isUncharted(y + 1, x)) {
-                yj.addLast(y + 1);
-                xj.addLast(x);  
+            if (isUncharted(y + 1, x) && y < maze.length - 1) {
+                que.addLast(new Tile(y + 1, x));
                 routes[y + 1][x] = routes[y][x] + "A";
             }
 
-            if (y > 0 && isUncharted(y - 1, x)) {
-                yj.addLast(y - 1);
-                xj.addLast(x);
+            if (isUncharted(y - 1, x) && y > 0 ) {
+                que.addLast(new Tile(y - 1, x));
                 routes[y - 1][x] = routes[y][x] + "Y";
             }               
                
-            if (0 < x && isUncharted(y, x - 1)) {
-                yj.addLast(y);
-                xj.addLast(x - 1);
+            if (isUncharted(y, x - 1) && 0 < x) {
+                que.addLast(new Tile(y, x - 1));
                 routes[y][x - 1] = routes[y][x] + "V";
             }
                 
-            if (x < maze[0].length - 1 && isUncharted(y, x + 1)) {
-                yj.addLast(y);
-                xj.addLast(x + 1);
+            if (isUncharted(y, x + 1) && x < maze[0].length - 1) {
+                que.addLast(new Tile(y, x + 1));
                 routes[y][x + 1] = routes[y][x] + "O";
             }            
         }
@@ -105,7 +96,6 @@ public class BreadthFirst {
         if (s.equals("@") || visited[y][x]) {
             return false;
         } else  {
-            visited[y][x] = true;
             return true;
         }
     }
