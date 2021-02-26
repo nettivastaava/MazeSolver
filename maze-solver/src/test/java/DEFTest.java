@@ -18,11 +18,14 @@ public class DEFTest {
     Maze bigMaze;
     File asciiFile2;
     DeadendFiller def;
+    File asciiFile3;
+    Maze cycledMaze;
         
     @Before
     public void setUp() throws Exception {
         asciiFile = testFolder.newFile("asciiFile.txt");
         asciiFile2 = testFolder.newFile("asciiFile2.txt");
+        asciiFile3 = testFolder.newFile("asciiFile3.txt");
                    
         try (FileWriter file = new FileWriter(asciiFile.getAbsolutePath())) {
             file.write("@@@@@@@@@\n");
@@ -55,10 +58,24 @@ public class DEFTest {
             file.write("@....@@@@@..F.....@@\n");
             file.write("@@@@@@@@@@@@@@@@@@@@\n");
         }
+        
+         try (FileWriter file = new FileWriter(asciiFile3.getAbsolutePath())) {
+            file.write("@@@@@@@@@@\n");
+            file.write("@S.......@\n");
+            file.write("@.@@.@@@.@\n");
+            file.write("@.@@@@.@.@\n");
+            file.write("@.@F@@...@\n");
+            file.write("@.@.@@.@.@\n");
+            file.write("@.@......@\n");
+            file.write("@.@@@@@@.@\n");
+            file.write("@........@\n");
+            file.write("@@@@@@@@@@\n");
+        }
            
         def = new DeadendFiller();
         maze = new Maze(6, 9, asciiFile.getAbsolutePath());
-        bigMaze = new Maze(20, 20, asciiFile2.getAbsolutePath());        
+        bigMaze = new Maze(20, 20, asciiFile2.getAbsolutePath());       
+        cycledMaze = new Maze(10, 10, asciiFile3.getAbsolutePath());
         
     }
         
@@ -78,12 +95,17 @@ public class DEFTest {
         
     @Test
     public void correctPathIsFound() {
-        assertEquals("AAAOO", def.findPath(maze.getMaze()));            
+        assertEquals("AAAOO", def.defCompleteMaze(maze.getMaze()));            
     }
     
     @Test
     public void correctPathIsFoundBigMaze() {
-        assertEquals("YYYVVVVAVAAVAAOOAAAAAAVVAAAAOOOAOOOOOOAOO", def.findPath(bigMaze.getMaze()));
+        assertEquals("YYYVVVVAVAAVAAOOAAAAAAVVAAAAOOOAOOOOOOAOO", def.defCompleteMaze(bigMaze.getMaze()));
+    }
+    
+    @Test
+    public void correctPathIsFoundCycled() {
+        assertEquals("OOOOOOOAAAVVAAVVVYY", def.defWithBFS(cycledMaze.getMaze()));
     }
 
         
@@ -91,6 +113,7 @@ public class DEFTest {
     public void tearDown() {
         asciiFile.delete();
         asciiFile2.delete();
+        asciiFile3.delete();
     }
     
     

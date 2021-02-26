@@ -2,6 +2,9 @@ package mazesolver.domain;
 
 import java.util.ArrayDeque;
 
+/**
+* This class solves a maze using the breadth first search
+*/
 public class BreadthFirst {
     char[][] maze;
     String route;
@@ -12,6 +15,13 @@ public class BreadthFirst {
     public BreadthFirst() {   
     }
     
+    /**
+    * This class can be thought as constructor that also invokes the methods used to solve the maze
+    * 
+    * @param maze 2d array that contains the maze to be solved
+    * 
+    * @return The string that corresponds the transitions needed to get from S to F
+    */
     public String bfs(char[][] maze) {
         this.maze = maze;
         this.route = "no path available";
@@ -46,6 +56,13 @@ public class BreadthFirst {
 
     }
 
+     /**
+     *Traverses the tiles in the maze until "F" is reached using breadth first search.
+     * 
+     *@param y indicates the row of the tile
+     * 
+     *@param x indicates the column of the tile
+     */
     public void searchNeighbors(int y, int x) {
         que.addLast(new Tile(y, x));
         while (que.isNotEmpty()) {

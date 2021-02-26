@@ -1,19 +1,26 @@
 
 package mazesolver.domain;
 
-
+/**
+* This class solves a maze using the dead end filler algorithm
+*/
 public class DeadendFiller {
     char[][] maze;
     SimpleStack deadends;
     int pathY;
     int pathX;
     String route;
+    BreadthFirst bfs;
     
     public DeadendFiller() {
         deadends = new SimpleStack();
+        bfs = new BreadthFirst();
     }
     
-    public String findPath(char[][] laby) {
+    /**
+    * This class solves a maze using the DeadendFiller algorithm
+    */
+    public String defCompleteMaze(char[][] laby) {
 
         this.maze = laby;
         this.pathY = -1;
@@ -39,6 +46,58 @@ public class DeadendFiller {
         return solve();
     }
     
+    public String defWithBFS(char laby[][]) {
+        this.maze = laby;
+        
+        this.pathY = -1;
+        this.pathX = -1;
+        
+        route = "";
+        
+        for (int i = 1; i < maze.length; i++) {
+            for (int j = 1; j < maze[0].length; j++) {
+                String s = Character.toString(maze[i][j]);         
+                if (s.equals("S")) {
+                    pathY = i;
+                    pathX = j;
+                    break;
+                }
+            }
+        }
+        
+        if (pathX == -1 || pathY == -1) {
+            return null;
+        }
+        
+        return solveWithBFS();
+    }
+    
+    public String solveWithBFS() {
+        findDeadends();
+        fillDeadends();
+        findPathWithBFS(pathY, pathX);
+        return bfs.route;
+    }
+    
+    public void findPathWithBFS(int y, int x) {
+        bfs.maze = maze;
+        bfs.route = "no path available";
+        bfs.visited = new boolean[maze.length][maze[0].length];
+        bfs.routes = new String [maze.length][maze[0].length];
+
+        bfs.que = new MazeQueue();
+        bfs.routes[y][x]="";
+        
+        bfs.searchNeighbors(y, x);
+    }
+    
+    
+    /**
+     *Invokes all the other methods needed to actually solve the maze
+     *
+     *@return The string that corresponds the transitions needed to get from S to F 
+     * 
+     */
     public String solve() {
         findDeadends();
         fillDeadends();
@@ -171,6 +230,9 @@ public class DeadendFiller {
         this.maze = maze;
     }
     
+    /**
+     * Used to visualize the maze once all the dead ends have been filled.
+     */
     public void printMaze() {
         for (int i = 0; i < maze.length; i++) {
             for (int j = 0; j < maze[i].length; j++) {

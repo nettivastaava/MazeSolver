@@ -1,6 +1,8 @@
 package mazesolver.domain;
 
-
+/**
+* This class solves a maze using the wall follower algorithm
+*/
 public class Wallfollower {
     boolean[][] visited;
     char[][] maze;
@@ -12,6 +14,13 @@ public class Wallfollower {
     public Wallfollower() {
     }
     
+    /**
+    * This class can be thought as constructor that also invokes the methods used to solve the maze
+    * 
+    * @param maze 2d array that contains the maze to be solved
+    * 
+    * @return The string that corresponds the transitions needed to get from S to F
+    */
     public String searchPath(char[][] laby) {
         this.maze = laby;
         this.visited = new boolean[laby.length][laby[0].length];
@@ -40,6 +49,13 @@ public class Wallfollower {
         return this.route;
     }
     
+    /**
+    * Traverses the tiles in the maze until "F" is reached using depth first search.
+    * 
+    * @param y 2d array that contains the maze to be solved
+    * 
+    * @param x
+    */
     public void depthFirst(int y, int x) {                
         visited[y][x] = true;
         
@@ -69,6 +85,15 @@ public class Wallfollower {
         }    
     }
     
+    /**
+     * Checks if the corresponding tile is unvisited and that it is not a wall
+     * 
+     * @param y indicates the row of the tile
+     * 
+     * @param x indicates the column of the tile
+     * 
+     * @return true if the tile is yet unvisited and false, if not
+     */
     public boolean isUncharted(int y, int x) {
         String s = Character.toString(maze[y][x]);
         if (s.equals("@") || visited[y][x]) {

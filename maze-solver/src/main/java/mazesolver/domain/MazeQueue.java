@@ -74,7 +74,7 @@ public class MazeQueue<T> {
      */
     public T removeFirst() {
         T first = this.values[indexOfFirst];
-        this.values[indexOfFirst]=null;
+        this.values[indexOfFirst] = null;
         indexOfFirst++;
         size--;
         

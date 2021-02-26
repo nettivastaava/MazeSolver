@@ -2,7 +2,7 @@
 package mazesolver.domain;
 
 /**
-* This class is used to keep track of all the remaining dead ends in the labyrinth
+* A simplified version of the Java's Stack used to keep track of all the remaining dead ends in the labyrinth
 */
 public class SimpleStack<T> {
     private T[] values;

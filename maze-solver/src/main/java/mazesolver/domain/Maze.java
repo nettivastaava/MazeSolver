@@ -10,6 +10,15 @@ import java.util.Scanner;
 public class Maze {
     char[][] maze;
     
+    /**
+    * The class that reads an ASCII maze from a file and creates a corresponding object
+    * 
+    * @param n number of rows in the maze (height)
+    * 
+    * @param m numbers of columns in the maze (width)
+    * 
+    * @param file name of the file containing the ASCII maze
+    */
     public Maze(int n, int m, String file) {
         maze = new char[n][m];
         
