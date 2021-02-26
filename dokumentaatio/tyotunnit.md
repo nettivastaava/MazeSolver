@@ -25,4 +25,5 @@
 | 25.02.2021 | 2 | Testien korjaaminen vastaamaan muutoksia |
 | 26.02.2021 | 2 | DeadendFillerin laajennus ja testit |
 | 26.02.2021 | 3 | Vertailutulosten analysointia |
-| Yht. | 51 | |
+| 26.02.2021 | 1 | Dokumentointi |
+| Yht. | 52 | |
