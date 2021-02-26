@@ -10,6 +10,8 @@
 
 [Testaus](https://github.com/nettivastaava/MazeSolver/blob/master/dokumentaatio/testaus.md)
 
+[Käyttöohje](https://github.com/nettivastaava/MazeSolver/blob/master/dokumentaatio/kayttoohje.md)
+
 ### Viikkoraportit
 
 - [Viikko 1](https://github.com/nettivastaava/MazeSolver/blob/master/dokumentaatio/viikkoraportti1.md)
