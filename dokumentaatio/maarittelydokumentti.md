@@ -7,7 +7,7 @@ Projektini tulee toteuttamaan ja vertailemaan useampaa polunetsintäalgoritmia, 
 
 ## **Algoritmi ja aikavaativuus**
 
-Lyhyimmän reitin etsimisessä tullaan leveyshaun lisäksi käyttämään DeadendFiller ja Wallfollower-algoritmeja. 
+Lyhyimmän reitin etsimisessä tullaan leveyshaun lisäksi käyttämään DeadendFiller ja Wallfollower-algoritmeja. DeadendFiller sisältää myös toteutuksen, jolla reitti voidaan löytää syklejä sisältävästä labyrintistä.
 
 Leveyshaku ja Wallfollower ovat aikavaativuudeltaan O(n + m), missä n on solmujen ja m solmuja yhdistävien kaarten määrä. Tämä on todettavissa sillä, että algoritmit käsittelevät kunkin solmun ja kaaren korkeintaan kerran. 
 
