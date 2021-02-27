@@ -32,34 +32,38 @@ public class Main {
             if (algorithm == 1) {
                 long start = System.nanoTime();
                 String path = wf.searchPath(m.getMaze());
-                System.out.println("WF: " + path + " " + path.length());
                 long end = System.nanoTime();
                 long elapsed = end - start;
-                System.out.println(elapsed/1e9);
+                System.out.println("path: " + path);
+                System.out.println("path length: " + path.length());
+                System.out.println("took " + elapsed/1e9 + " seconds to solve");
                 System.out.println("");
             } else if (algorithm == 2) {
                 long start = System.nanoTime();
                 String path = bfs.bfs(m.getMaze());
-                System.out.println("BFS: " + path + " " + path.length());
                 long end = System.nanoTime();
                 long elapsed = end - start;
-                System.out.println(elapsed/1e9);
+                System.out.println("path: " + path);
+                System.out.println("path length: " + path.length());
+                System.out.println("took " + elapsed/1e9 + " seconds to solve");
                 System.out.println("");
             } else if (algorithm == 3) {
                 long start = System.nanoTime();
                 String path = df.defCompleteMaze(m.getMaze());
-                System.out.println("DEF: " + path + " " + path.length());
                 long end = System.nanoTime();
                 long elapsed = end - start;
-                System.out.println(elapsed/1e9);
+                System.out.println("path: " + path);
+                System.out.println("path length: " + path.length());
+                System.out.println("took " + elapsed/1e9 + " seconds to solve");
                 System.out.println("");
             } else if (algorithm == 4) {
                 long start = System.nanoTime();
                 String path = df.defWithBFS(m.getMaze());
-                System.out.println("DEF: " + path + " " + path.length());
                 long end = System.nanoTime();
                 long elapsed = end - start;
-                System.out.println(elapsed/1e9);
+                System.out.println("path: " + path);
+                System.out.println("path length: " + path.length());
+                System.out.println("took " + elapsed/1e9 + " seconds to solve");
                 System.out.println("");
             } else {
                 System.out.println("Invalid input");
