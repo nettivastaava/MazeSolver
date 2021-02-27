@@ -26,4 +26,5 @@
 | 26.02.2021 | 2 | DeadendFillerin laajennus ja testit |
 | 26.02.2021 | 3 | Vertailutulosten analysointia |
 | 26.02.2021 | 1 | Dokumentointi |
-| Yht. | 52 | |
+| 27.02.2021 | 1 | Käyttöliittymän parantelua |
+| Yht. | 53 | |
