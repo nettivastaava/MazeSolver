@@ -58,8 +58,8 @@ public class BFSTest {
         }
             
             
-        maze = new Maze(6, 9, asciiFile.getAbsolutePath());
-        bigMaze = new Maze(20, 20, asciiFile2.getAbsolutePath());
+        maze = new Maze(asciiFile.getAbsolutePath());
+        bigMaze = new Maze(asciiFile2.getAbsolutePath());
         bfs = new BreadthFirst();
     }
         

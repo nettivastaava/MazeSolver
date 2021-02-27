@@ -29,7 +29,7 @@ public class MazeTest {
                 file.write("@@@@@@@@@\n");
             }
                      
-            maze = new Maze(6, 9, asciiFile.getAbsolutePath());
+            maze = new Maze(asciiFile.getAbsolutePath());
         }
         
         @Test

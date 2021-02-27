@@ -19,20 +19,32 @@ public class Maze {
     * 
     * @param file name of the file containing the ASCII maze
     */
-    public Maze(int n, int m, String file) {
-        maze = new char[n][m];
+    public Maze(String file) {
         
         try {
             Scanner input = new Scanner(new File(file));
-
-            for (int i = 0; i < n; i++) {
-                String s = input.next();
-
-                for (int j = 0; j < m; j++) {
+            int n = 0;
+            int m = 0;
+            
+            while (input.hasNextLine()) {
+                m = input.nextLine().length();
+                n++;
+            }
+            
+            maze = new char[n][m];
+            
+            input = new Scanner(new File(file));
+            
+            int i = 0;
+            
+            while (input.hasNextLine()) {
+                String s = input.nextLine();
+                
+                for (int j = 0; j < s.length(); j++) {
                     maze[i][j] = s.charAt(j);
                 }
+                i++;
             }
-
         } catch (Exception e) { 
         }
         

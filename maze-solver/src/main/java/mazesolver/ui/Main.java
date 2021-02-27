@@ -14,14 +14,10 @@ public class Main {
         DeadendFiller df = new DeadendFiller();
         
         while(true) {
-            System.out.println("Number of rows:");
-            int rows = Integer.valueOf(s.nextLine());
-            System.out.println("Number of columns:");
-            int columns = Integer.valueOf(s.nextLine());
             System.out.println("Name of the file:");
             String name = s.nextLine();
 
-            Maze m = new Maze(rows, columns, name);
+            Maze m = new Maze(name);
 
             m.printMaze();
 

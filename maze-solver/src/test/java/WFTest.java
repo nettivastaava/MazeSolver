@@ -57,9 +57,9 @@ public class WFTest {
                 file.write("@@@@@@@@@@@@@@@@@@@@\n");
             }
                       
-            maze = new Maze(6, 9, asciiFile.getAbsolutePath());
+            maze = new Maze(asciiFile.getAbsolutePath());
             wf = new Wallfollower();
-            bigMaze = new Maze(20, 20, asciiFile2.getAbsolutePath());
+            bigMaze = new Maze(asciiFile2.getAbsolutePath());
         }
         
         @Test

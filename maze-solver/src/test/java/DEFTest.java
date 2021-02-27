@@ -73,9 +73,9 @@ public class DEFTest {
         }
            
         def = new DeadendFiller();
-        maze = new Maze(6, 9, asciiFile.getAbsolutePath());
-        bigMaze = new Maze(20, 20, asciiFile2.getAbsolutePath());       
-        cycledMaze = new Maze(10, 10, asciiFile3.getAbsolutePath());
+        maze = new Maze(asciiFile.getAbsolutePath());
+        bigMaze = new Maze(asciiFile2.getAbsolutePath());       
+        cycledMaze = new Maze(asciiFile3.getAbsolutePath());
         
     }
         
