@@ -26,7 +26,6 @@ Leveyshaussa tullaan lisäksi hyödyntämään jonorakennetta.
 ### **Syötteet**
 
 - Tiedoston nimi, joka sisältää ASCII-merkeistä muodostetun labyrintin
-- Tiedostossa kuvatun labyrintin korkeus ja leveys kokonaislukuina
 
 ### **Tulosteet**
 
