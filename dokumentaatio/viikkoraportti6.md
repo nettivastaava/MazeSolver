@@ -16,4 +16,4 @@ Algoritmien vertailussa saadut tulokset eivät vieläkään vastanneet täysin o
 
 ## **Loppukurssin tavoitteet**
 
-Uutta koodia tulee luultavasti enää hyvin vähän. Jäljellä oleva aikaa tulee varmasti kulumaan pitkälti vertailun ja dokumentoinnin parissa. Erityisesti demotilaisuutta varten täytyy vielä käydä projekti läpi rivi riviltä.
+Uutta koodia tulee luultavasti enää vain käyttöliittymään. Jäljellä oleva aikaa tulee varmasti kulumaan pitkälti vertailun ja dokumentoinnin parissa. Erityisesti demotilaisuutta varten täytyy vielä käydä projekti läpi rivi riviltä.
