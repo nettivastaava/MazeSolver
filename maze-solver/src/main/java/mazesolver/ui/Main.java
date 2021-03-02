@@ -36,7 +36,7 @@ public class Main {
                 long elapsed = end - start;
                 System.out.println("path: " + path);
                 System.out.println("path length: " + path.length());
-                System.out.println("took " + elapsed/1e9 + " seconds to solve");
+                System.out.println("took " + elapsed / 1e9 + " seconds to solve");
                 System.out.println("");
             } else if (algorithm == 2) {
                 long start = System.nanoTime();
@@ -45,7 +45,7 @@ public class Main {
                 long elapsed = end - start;
                 System.out.println("path: " + path);
                 System.out.println("path length: " + path.length());
-                System.out.println("took " + elapsed/1e9 + " seconds to solve");
+                System.out.println("took " + elapsed / 1e9 + " seconds to solve");
                 System.out.println("");
             } else if (algorithm == 3) {
                 long start = System.nanoTime();
@@ -54,7 +54,7 @@ public class Main {
                 long elapsed = end - start;
                 System.out.println("path: " + path);
                 System.out.println("path length: " + path.length());
-                System.out.println("took " + elapsed/1e9 + " seconds to solve");
+                System.out.println("took " + elapsed / 1e9 + " seconds to solve");
                 System.out.println("");
             } else if (algorithm == 4) {
                 long start = System.nanoTime();
@@ -63,7 +63,7 @@ public class Main {
                 long elapsed = end - start;
                 System.out.println("path: " + path);
                 System.out.println("path length: " + path.length());
-                System.out.println("took " + elapsed/1e9 + " seconds to solve");
+                System.out.println("took " + elapsed / 1e9 + " seconds to solve");
                 System.out.println("");
             } else {
                 System.out.println("Invalid input");

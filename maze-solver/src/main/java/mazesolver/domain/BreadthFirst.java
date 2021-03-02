@@ -82,7 +82,7 @@ public class BreadthFirst {
                 routes[y + 1][x] = routes[y][x] + "A";
             }
 
-            if (isUncharted(y - 1, x) && y > 0 ) {
+            if (isUncharted(y - 1, x) && y > 0) {
                 que.addLast(new Tile(y - 1, x));
                 routes[y - 1][x] = routes[y][x] + "Y";
             }               

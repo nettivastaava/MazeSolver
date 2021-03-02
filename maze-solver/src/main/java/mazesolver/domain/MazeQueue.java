@@ -78,7 +78,7 @@ public class MazeQueue<T> {
         indexOfFirst++;
         size--;
         
-        if (indexOfFirst >= this.values.length / 2 && indexOfFirst >= 10 ) {
+        if (indexOfFirst >= this.values.length / 2 && indexOfFirst >= 10) {
             decreaseCapacity();
         }
         

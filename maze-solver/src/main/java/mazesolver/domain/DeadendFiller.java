@@ -86,7 +86,7 @@ public class DeadendFiller {
         bfs.routes = new String [maze.length][maze[0].length];
 
         bfs.que = new MazeQueue();
-        bfs.routes[y][x]="";
+        bfs.routes[y][x] = "";
         
         bfs.searchNeighbors(y, x);
     }
@@ -139,7 +139,7 @@ public class DeadendFiller {
      * Iterates through all the dead ends and invokes the method used to actually fill them.
      */
     public void fillDeadends() {
-        while(deadends.isNotEmpty()) {
+        while (deadends.isNotEmpty()) {
             Tile current = (Tile) deadends.getNext();   
             fillOne(current.y, current.x);              
         }
