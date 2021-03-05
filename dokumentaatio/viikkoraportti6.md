@@ -8,7 +8,7 @@
 - Algoritmien vertailua
 - Käyttöliittymä- ja ohje
 
-Ainoa "uusi" toiminnallisuus oli DeadendFillerin laajennus, jonka avulla agloritmilla voi löytää lyhyimmän polun myös syklejä sisältävästä labyrintistä. Käytännössä tämä toteutus on vain tavallinen leveyshaku, jota on tehostettu DeadendFillerillä. Viime viikolla kohdattu ongelma MazeQueuen hitauden kanssa on korjattu ja toteutuksen pitäisi nyt olla tehokas.
+Ainoa "uusi" toiminnallisuus oli DeadendFillerin laajennus, jonka avulla algoritmilla voi löytää lyhyimmän polun myös syklejä sisältävästä labyrintistä. Käytännössä tämä toteutus on vain tavallinen leveyshaku, jota on tehostettu DeadendFillerillä. Viime viikolla kohdattu ongelma MazeQueuen hitauden kanssa on korjattu ja toteutuksen pitäisi nyt olla tehokas.
 
 ## **Kohdattuja ongelmia**
 
