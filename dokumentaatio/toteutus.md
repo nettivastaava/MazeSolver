@@ -6,5 +6,5 @@ Ohjelman runko koostuu luokista Maze, DeadendFiller (DEF), BreadthFirst (BFS) ja
 
 ## **Algoritmien vertailu ja analyysi**
 
-Todella pienillä ja suoraviivaisilla labyrinteilla WF ja BFS vaikuttavat olevan nopeimpia. Kuitenkin labyrintin kasvaessa huomasin yllätyksekseni, että DEF oli lähes poikkeuksetta nopein. Tätä havaintoa tuki myös se, että BFS:n suoritus (syklillisissä labyrinteissa) todella tehostui käyttämällä ensin umpikujantäyttöä. Toki tapauksissa, joissa lähtö- ja maalisolmut olivat riittävän lähellä toisiaan, DEF jäi selvästi taakse. Wallfollower ei syklillisissä labyrinteissä ole samalla tavalla vertailukelpoinen kahden muun labyrintin kanssa, sillä algoritmi ei tässä tapauksessa löydä välttämättä lyhyintä reittiä.
+Todella pienillä ja suoraviivaisilla labyrinteilla WF ja BFS vaikuttavat olevan nopeimpia. Kuitenkin labyrintin kasvaessa huomasin yllätyksekseni, että DEF oli lähes poikkeuksetta nopein. Tätä havaintoa tuki myös se, että BFS:n suoritus (syklillisissä labyrinteissa) todella tehostui käyttämällä ensin umpikujantäyttöä. Toki tapauksissa, joissa lähtö- ja maalisolmut olivat riittävän lähellä toisiaan, DEF jäi selvästi taakse. Wallfollower ei syklillisissä labyrinteissä ole samalla tavalla vertailukelpoinen kahden muun algoritmin kanssa, sillä Walfollower ei tässä tapauksessa löydä välttämättä lyhyintä reittiä.
   
