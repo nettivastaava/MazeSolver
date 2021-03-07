@@ -13,9 +13,14 @@ public class Main {
         BreadthFirst bfs = new BreadthFirst();
         DeadendFiller df = new DeadendFiller();
         
-        while(true) {
-            System.out.println("Name of the file:");
+        while (true) {
+            System.out.println("Which maze would you like to solve? (Type 'quit' to exit)");
             String name = s.nextLine();
+            
+            if (name.equals("quit")) {
+                System.out.println("Shutting down");
+                break;
+            }
 
             Maze m = new Maze(name);
 
@@ -68,15 +73,7 @@ public class Main {
             } else {
                 System.out.println("Invalid input");
                 System.out.println("");
-            }
-            
-            System.out.println("Solve another one? (type 'q' to quit or anything else to continue)");
-            String quit = s.nextLine();
-            
-            if (quit.equals("q")) {
-                break;
-            }
-            
+            }            
             
         }
         

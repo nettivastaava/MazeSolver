@@ -1,6 +1,5 @@
 package mazesolver.domain;
 
-import java.util.ArrayDeque;
 
 /**
 * This class solves a maze using the breadth first search
