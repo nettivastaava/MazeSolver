@@ -12,6 +12,10 @@
 
 [Käyttöohje](https://github.com/nettivastaava/MazeSolver/blob/master/dokumentaatio/kayttoohje.md)
 
+### Releaset
+
+[Valmis ohjelma](https://github.com/nettivastaava/MazeSolver/releases/tag/loppupalautus)
+
 ### Viikkoraportit
 
 - [Viikko 1](https://github.com/nettivastaava/MazeSolver/blob/master/dokumentaatio/viikkoraportti1.md)

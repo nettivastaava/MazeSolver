@@ -4,8 +4,9 @@ Ohjelmaa varten on toteutettu automatisoituja yksikkötestejä JUnitilla. Tämä
 
 ### **Testauskattavuus**
 
-Testauksen ollessa ainakin tältä erää valmis, on testien rivi- ja haaraumakattavuudet todella korkeat (85-95%). Myös manuaalisessa testauksessa on käytetty monipuolisesti erikokoisia ja sisältöisiä labyrinttejä.
+Testauksen ollessa valmis, on testien rivi- ja haaraumakattavuudet todella korkeat (85-95%). Myös manuaalisessa testauksessa on käytetty monipuolisesti erikokoisia ja sisältöisiä labyrinttejä.
 
-### **Ongelmat**
+### **Huomioita**
 
-Toistaiseksi algoritmeja on testattu vain omatekoisilla, manuaalisesti luoduilla labyrinteilla, joten takeita toimivuudesta erikoistilanteissa ei ole.
+Algoritmien oikeellisuus on varmistettu tarkistamalla, että jokainen algoritmi tuottaa saman reitin samassa labyrintissä (poislukien wall follower ja yksinkertainen dead end filler syklillisissä labyrinteissä). Automaattiset testit kattavat vain pari tällaista tapausta, mutta manuaaliset testaukset käsittivät lähemmäs parikymmentä labyrinttiä erilaisilla reittivariaatioilla.
+
