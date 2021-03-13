@@ -27,4 +27,5 @@
 | 26.02.2021 | 3 | Vertailutulosten analysointia |
 | 26.02.2021 | 1 | Dokumentointi |
 | 27.02.2021 | 1 | Käyttöliittymän parantelua |
-| Yht. | 53 | |
+| 13.03.2021 | 3 | Dokumentointi ja viimeistely |
+| Yht. | 56 | |
