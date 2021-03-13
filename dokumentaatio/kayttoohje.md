@@ -12,13 +12,15 @@ Sovelluksessa on yksinkertainen tekstikäyttöliittymä, joka toimii seuraavalla
 #### Käynnistys
 - Sovellus käynnistetään komennolla: mvn compile exec:java -Dexec.mainClass=mazesolver.ui.Main
 
-
 #### Testaus
 - Testit suoritetaan komennolla: mvn test
 - Testikattavuusraportti luodaan komennolla: mvn test jacoco:report
   
 #### Checkstyle
 - Tiedostoon checkstyle.xml määrittelemät tarkistukset suoritetaan komennolla: mvn jxr:jxr checkstyle:checkstyle
+
+#### Suoritettavan jarin generointi
+- Hakemistoon target generoidaan suoritettava jar-tiedosto komennolla mvn package
 
 
 
