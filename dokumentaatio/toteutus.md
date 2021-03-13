@@ -8,5 +8,7 @@ Ohjelman runko koostuu luokista Maze, DeadendFiller (DEF), BreadthFirst (BFS) ja
 
 Todella pienillä ja suoraviivaisilla labyrinteilla WF ja BFS vaikuttavat olevan nopeimpia. Kuitenkin labyrintin kasvaessa huomasin yllätyksekseni, että DEF oli lähes poikkeuksetta nopein. Tätä havaintoa tuki myös se, että BFS:n suoritus (syklillisissä labyrinteissa) todella tehostui käyttämällä ensin umpikujantäyttöä. Toki tapauksissa, joissa lähtö- ja maalisolmut olivat riittävän lähellä toisiaan, DEF jäi selvästi taakse. Wallfollower ei syklillisissä labyrinteissä ole samalla tavalla vertailukelpoinen kahden muun algoritmin kanssa, sillä Walfollower ei tässä tapauksessa löydä välttämättä lyhyintä reittiä.
 
+Alla on taulukoituna algoritmien suoritusnopeuksia (sekunteina) erikokoisilla labyrinteilla. Jokaisessa taulukon testissä on käytetty labyrinttia, jossa kuljettava reitti on valittu melko pitkäksi labyrintin kokoon verrattuna.
+
 ![speedtests](https://github.com/nettivastaava/MazeSolver/blob/master/dokumentaatio/kuvat/speedtests.png)
   
