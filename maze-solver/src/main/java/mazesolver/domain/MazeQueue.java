@@ -49,9 +49,9 @@ public class MazeQueue<T> {
         this.values = newList;
     }
     
-     /**
-     * Copies the values of the queue to another, smaller array
-     */
+    /**
+    * Copies the values of the queue to another, smaller array
+    */
     public void decreaseCapacity() {
         int newSize = (indexOfFirst + 1);
 

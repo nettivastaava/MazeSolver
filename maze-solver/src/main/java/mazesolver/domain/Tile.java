@@ -1,7 +1,9 @@
 
 package mazesolver.domain;
 
-
+/**
+* Imitates Java's class Point
+*/
 public class Tile {
     int y;
     int x;

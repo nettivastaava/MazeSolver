@@ -42,8 +42,8 @@ public class SimpleStack<T> {
     }
     
     /**
-     *Copies the values from the stack to another, smaller array
-     */
+    *Copies the values from the stack to another, smaller array
+    */
     public void decreaseCapacity() {
         int newSize = values.length / 2;
         

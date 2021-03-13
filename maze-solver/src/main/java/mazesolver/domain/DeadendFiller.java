@@ -18,7 +18,11 @@ public class DeadendFiller {
     }
     
     /**
-    * This class solves a maze using the DeadendFiller algorithm
+    * Solves a maze using DeadendFiller algorithm
+    * 
+    * @param laby maze to be solved
+    * 
+    * @return String corresponding the path from start to goal
     */
     public String defCompleteMaze(char[][] laby) {
 
@@ -46,6 +50,13 @@ public class DeadendFiller {
         return solve();
     }
     
+    /**
+    * Solves a maze using DeadendFiller and BFS algorithms
+    * 
+    * @param laby maze to be solved
+    * 
+    * @return String corresponding the path from start to goal
+    */
     public String defWithBFS(char laby[][]) {
         this.maze = laby;
         
@@ -228,19 +239,6 @@ public class DeadendFiller {
  
     public void setMaze(char[][] maze) {
         this.maze = maze;
-    }
-    
-    /**
-     * Used to visualize the maze once all the dead ends have been filled.
-     */
-    public void printMaze() {
-        for (int i = 0; i < maze.length; i++) {
-            for (int j = 0; j < maze[i].length; j++) {
-                System.out.print(maze[i][j]);
-            }
-            System.out.print("\n");
-        }
-        System.out.println("");
     }
     
 }

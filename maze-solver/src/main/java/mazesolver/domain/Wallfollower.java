@@ -1,7 +1,7 @@
 package mazesolver.domain;
 
 /**
-* This class solves a maze using the wall follower algorithm
+* This class solves a maze using wall follower algorithm
 */
 public class Wallfollower {
     boolean[][] visited;
