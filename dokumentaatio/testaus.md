@@ -4,7 +4,7 @@ Ohjelmaa varten on toteutettu automatisoituja yksikkötestejä JUnitilla. Tämä
 
 ### **Testauskattavuus**
 
-Testauksen ollessa ainakin tältä erää valmis, on testien rivi- ja haaraumakattavuudet todella korkeat (85-95%). Myös manuaalisessa testauksessa on käytetty monipuolisesti erikokoisia ja sisältöisiä labyrinttejä.
+Testauksen ollessa valmis, on testien rivi- ja haaraumakattavuudet todella korkeat (85-95%). Myös manuaalisessa testauksessa on käytetty monipuolisesti erikokoisia ja sisältöisiä labyrinttejä.
 
 ### **Huomioita**
 
